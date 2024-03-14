@@ -27,6 +27,7 @@
 #include <QShortcut>
 #include <QWindow>
 #include <QMouseEvent>
+#include <QPainterPath>
 
 #ifdef Q_OS_MAC
 #include "osxwindow.h"
