@@ -62,47 +62,47 @@
     <message>
         <location filename="../src/widgets/dcrumbedit.cpp" line="554"/>
         <source>Cyan</source>
-        <translation>Modrozelená</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/widgets/dcrumbedit.cpp" line="557"/>
         <source>Magenta</source>
-        <translation>Fialová</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/widgets/dcrumbedit.cpp" line="560"/>
         <source>Yellow</source>
-        <translation>Žlutá</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/widgets/dcrumbedit.cpp" line="563"/>
         <source>Dark Red</source>
-        <translation>Tmavě červená</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/widgets/dcrumbedit.cpp" line="566"/>
         <source>Dark Green</source>
-        <translation>Tmavě zelená</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/widgets/dcrumbedit.cpp" line="569"/>
         <source>Dark Blue</source>
-        <translation>Tmavě modrá</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/widgets/dcrumbedit.cpp" line="572"/>
         <source>Dark Cyan</source>
-        <translation>Tmavě modrozelená</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/widgets/dcrumbedit.cpp" line="575"/>
         <source>Dark Magenta</source>
-        <translation>Tmavě fialová</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/widgets/dcrumbedit.cpp" line="578"/>
         <source>Dark Yellow</source>
-        <translation>Tmavě žlutá</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -136,7 +136,7 @@
     <message>
         <location filename="../src/widgets/dsimplelistview.cpp" line="1235"/>
         <source>No search result</source>
-        <translation>Žádný výsledek hledání</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/widgets/private/settings/content.cpp" line="189"/>

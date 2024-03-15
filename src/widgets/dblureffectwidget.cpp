@@ -21,6 +21,7 @@
 #include "util/dwindowmanagerhelper.h"
 
 #include <QPainter>
+#include <QPainterPath>
 #include <QBackingStore>
 #include <QPaintEvent>
 #include <QDebug>
@@ -56,7 +57,7 @@ bool DBlurEffectWidgetPrivate::isFull() const
 {
     D_QC(DBlurEffectWidget);
 
-    return full || (q->isTopLevel() && !(blurRectXRadius * blurRectYRadius) && maskPath.isEmpty());
+    return full || (q->isTopLevel() && !(blurRectXRadius * blurRectYRadius));
 }
 
 void DBlurEffectWidgetPrivate::addToBlurEffectWidgetHash()

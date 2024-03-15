@@ -9,7 +9,7 @@
     <message>
         <location filename="../src/widgets/dapplication.cpp" line="712"/>
         <source>Version: %1</source>
-        <translation>Versión: %1</translation>
+        <translation>Versión; %1</translation>
     </message>
     <message>
         <location filename="../src/widgets/dapplication.cpp" line="716"/>
@@ -32,7 +32,7 @@
     <message>
         <location filename="../src/widgets/dcrumbedit.cpp" line="536"/>
         <source>Dark Gray</source>
-        <translation>Buxu escuro</translation>
+        <translation>Buxu escuru</translation>
     </message>
     <message>
         <location filename="../src/widgets/dcrumbedit.cpp" line="539"/>
@@ -42,7 +42,7 @@
     <message>
         <location filename="../src/widgets/dcrumbedit.cpp" line="542"/>
         <source>Light Gray</source>
-        <translation>Buxu claro</translation>
+        <translation>Buxu claru</translation>
     </message>
     <message>
         <location filename="../src/widgets/dcrumbedit.cpp" line="545"/>
@@ -62,7 +62,7 @@
     <message>
         <location filename="../src/widgets/dcrumbedit.cpp" line="554"/>
         <source>Cyan</source>
-        <translation>Cianu</translation>
+        <translation>Cian</translation>
     </message>
     <message>
         <location filename="../src/widgets/dcrumbedit.cpp" line="557"/>
@@ -77,27 +77,27 @@
     <message>
         <location filename="../src/widgets/dcrumbedit.cpp" line="563"/>
         <source>Dark Red</source>
-        <translation>Bermeyu escuro</translation>
+        <translation>Bermeyu escuru</translation>
     </message>
     <message>
         <location filename="../src/widgets/dcrumbedit.cpp" line="566"/>
         <source>Dark Green</source>
-        <translation>Verde escuro</translation>
+        <translation>Verde escuru</translation>
     </message>
     <message>
         <location filename="../src/widgets/dcrumbedit.cpp" line="569"/>
         <source>Dark Blue</source>
-        <translation>Azul escuro</translation>
+        <translation>Azul escuru</translation>
     </message>
     <message>
         <location filename="../src/widgets/dcrumbedit.cpp" line="572"/>
         <source>Dark Cyan</source>
-        <translation>Cian escuro</translation>
+        <translation>Cian escuru</translation>
     </message>
     <message>
         <location filename="../src/widgets/dcrumbedit.cpp" line="575"/>
         <source>Dark Magenta</source>
-        <translation>Maxenta escuro</translation>
+        <translation>Maxenta escuru</translation>
     </message>
     <message>
         <location filename="../src/widgets/dcrumbedit.cpp" line="578"/>
@@ -123,12 +123,12 @@
     <message>
         <location filename="../src/widgets/dshortcutedit.cpp" line="31"/>
         <source>Please input a new shortcut</source>
-        <translation>Introduz un atayu nuevu</translation>
+        <translation>Introduz un atayu nuevu, por favor</translation>
     </message>
     <message>
         <location filename="../src/widgets/dshortcutedit.cpp" line="102"/>
         <source>None</source>
-        <translation>Nada</translation>
+        <translation>Dengún</translation>
     </message>
 </context>
 <context>
@@ -136,7 +136,7 @@
     <message>
         <location filename="../src/widgets/dsimplelistview.cpp" line="1235"/>
         <source>No search result</source>
-        <translation>Nun hai resultaos de la gueta</translation>
+        <translation>Nun hai dengún resultáu de gueta</translation>
     </message>
     <message>
         <location filename="../src/widgets/private/settings/content.cpp" line="189"/>
@@ -149,7 +149,7 @@
     <message>
         <location filename="../src/widgets/private/settings/shortcutedit.cpp" line="119"/>
         <source>Please enter a new shortcut</source>
-        <translation>Introduz un atayu nuevu</translation>
+        <translation>Introduz un atayu nuevu, por favor</translation>
     </message>
 </context>
 <context>

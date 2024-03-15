@@ -92,12 +92,12 @@
     <message>
         <location filename="../src/widgets/dcrumbedit.cpp" line="572"/>
         <source>Dark Cyan</source>
-        <translation>Tumma syaani</translation>
+        <translation>Tumma Syaani</translation>
     </message>
     <message>
         <location filename="../src/widgets/dcrumbedit.cpp" line="575"/>
         <source>Dark Magenta</source>
-        <translation>Tumma purppura</translation>
+        <translation>Tumma Purppura</translation>
     </message>
     <message>
         <location filename="../src/widgets/dcrumbedit.cpp" line="578"/>
@@ -128,7 +128,7 @@
     <message>
         <location filename="../src/widgets/dshortcutedit.cpp" line="102"/>
         <source>None</source>
-        <translation>Tyhjä</translation>
+        <translation>Ei mitään</translation>
     </message>
 </context>
 <context>
@@ -136,12 +136,12 @@
     <message>
         <location filename="../src/widgets/dsimplelistview.cpp" line="1235"/>
         <source>No search result</source>
-        <translation>Ei hakutuloksia</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/widgets/private/settings/content.cpp" line="189"/>
         <source>Restore Defaults</source>
-        <translation>Palauta oletukset</translation>
+        <translation>Palauta Oletukset</translation>
     </message>
 </context>
 <context>
@@ -149,7 +149,7 @@
     <message>
         <location filename="../src/widgets/private/settings/shortcutedit.cpp" line="119"/>
         <source>Please enter a new shortcut</source>
-        <translation>Anna uusi pikakuvake</translation>
+        <translation>Syötä uusi pikakuvake</translation>
     </message>
 </context>
 <context>
@@ -162,7 +162,7 @@
     <message>
         <location filename="../src/widgets/dtitlebar.cpp" line="456"/>
         <source>About</source>
-        <translation>Tietoja</translation>
+        <translation>Tietoja sovelluksesta</translation>
     </message>
     <message>
         <location filename="../src/widgets/dtitlebar.cpp" line="463"/>

@@ -18,10 +18,10 @@
 #ifndef DGRAPHICSCLIPEFFECT_H
 #define DGRAPHICSCLIPEFFECT_H
 
-#include <QPainterPath>
 #include "dtkwidget_global.h"
 #include "dobject.h"
 
+#include <QPainterPath>
 #include <QGraphicsEffect>
 
 DWIDGET_BEGIN_NAMESPACE

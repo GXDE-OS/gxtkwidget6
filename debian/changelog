@@ -1,5 +1,11 @@
-dtkwidget (15.11~2.0.16.1-1+comsta) unstable; urgency=low
+dtkwidget2 (15.11~2.2.1+rebuild-1) unstable; urgency=medium
 
-  * ['Autobuild release-candidate: 3128c340bded20d34bea5d3c2fdf8571b1aec3f8']
+  * update
 
- -- shuttle <shuttle@deepin.com>  Thu, 11 Jul 2019 12:59:09 +0000
+ -- Deepin Packages Builder <packages@deepin.com>  Wed, 27 Jan 2021 16:26:31 +0800
+
+dtkwidget2 (2.0.7.2) unstable; urgency=medium
+
+  * Release 2.0.7.2
+
+ -- Iceyer <me@iceyer.net>  Wed, 02 May 2018 09:56:59 +0800

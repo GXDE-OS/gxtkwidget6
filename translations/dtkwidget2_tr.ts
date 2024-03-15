@@ -149,7 +149,7 @@
     <message>
         <location filename="../src/widgets/private/settings/shortcutedit.cpp" line="119"/>
         <source>Please enter a new shortcut</source>
-        <translation>Lütfen yeni bir kısayol gir</translation>
+        <translation>Lütfen yeni bir kısayol yazın</translation>
     </message>
 </context>
 <context>
