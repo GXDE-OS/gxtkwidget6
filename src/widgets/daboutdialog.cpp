@@ -172,11 +172,16 @@ void DAboutDialogPrivate::initWebsiteInfo()
         isProfessional = deepinVersion.value("Release/Type").toString() == "Professional";
     }
 
-    websiteName = isProfessional ? "www.deepin.com" : "www.deepin.org";
-    websiteLink = QString("https://www.deepin.org/original/%1/").arg(qApp->applicationName());
+    //websiteName = isProfessional ? "www.deepin.com" : "www.deepin.org";
+    //websiteLink = QString("https://www.deepin.org/original/%1/").arg(qApp->applicationName());
+    websiteName = "gxde.gfdgdxi.top";
+    websiteLink = "https://gxde.gfdgdxi.top";
+
 #else
-    websiteName = "www.deepin.org";
-    websiteLink = "https://www.deepin.org";
+    //websiteName = "www.deepin.org";
+    //websiteLink = "https://www.deepin.org";
+    websiteName = "gxde.gfdgdxi.top";
+    websiteLink = "https://gxde.gfdgdxi.top";
 #endif
 }
 
