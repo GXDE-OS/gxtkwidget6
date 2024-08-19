@@ -43,6 +43,7 @@ isEmpty(DTK_NO_MULTIMEDIA){
 }
 
 HEADERS += $$PWD/dslider.h\
+    $$PWD/dcheckbox.h \
     $$PWD/dthememanager.h \
     $$PWD/dapplication.h \
     $$PWD/dconstants.h \
@@ -116,6 +117,7 @@ HEADERS += $$PWD/dslider.h\
     $$PWD/dborderlesswindow.h
 
 SOURCES += $$PWD/dslider.cpp \
+    $$PWD/dcheckbox.cpp \
     $$PWD/dthememanager.cpp \
     $$PWD/dapplication.cpp \
     $$PWD/dseparatorhorizontal.cpp \
