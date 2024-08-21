@@ -16,7 +16,6 @@ HEADERS += \
 
 SOURCES += \
     $$PWD/dabstractdialog.cpp \
-    $$PWD/ddialog.cpp \
     $$PWD/dinputdialog.cpp \
     $$PWD/daboutdialog.cpp \
     $$PWD/dsettingsdialog.cpp \

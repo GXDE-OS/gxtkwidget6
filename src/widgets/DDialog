@@ -1,1 +1,1 @@
-#include "ddialog.h"
+#include <QDialog>

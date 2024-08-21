@@ -43,7 +43,12 @@ isEmpty(DTK_NO_MULTIMEDIA){
 }
 
 HEADERS += $$PWD/dslider.h\
+    $$PWD/dapplicationhelper.h \
     $$PWD/dcheckbox.h \
+    $$PWD/ddialog.h \
+    $$PWD/dguiapplicationhelper.h \
+    $$PWD/dpalette.h \
+    $$PWD/dplatformtheme.h \
     $$PWD/dthememanager.h \
     $$PWD/dapplication.h \
     $$PWD/dconstants.h \
@@ -117,7 +122,12 @@ HEADERS += $$PWD/dslider.h\
     $$PWD/dborderlesswindow.h
 
 SOURCES += $$PWD/dslider.cpp \
+    $$PWD/dapplicationhelper.cpp \
     $$PWD/dcheckbox.cpp \
+    $$PWD/ddialog.cpp \
+    $$PWD/dguiapplicationhelper.cpp \
+    $$PWD/dpalette.cpp \
+    $$PWD/dplatformtheme.cpp \
     $$PWD/dthememanager.cpp \
     $$PWD/dapplication.cpp \
     $$PWD/dseparatorhorizontal.cpp \
@@ -198,6 +208,13 @@ INCLUDEPATH += $$PWD
 
 includes.files += $$PWD/*.h
 includes.files += \
+    $$PWD/DGuiApplicationHelper \
+    $$PWD/DApplicationHelper \
+    $$PWD/DPalette \
+    $$PWD/DListView \
+    $$PWD/DCheckBox \
+    $$PWD/DDialog \
+    $$PWD/DLabel \
     $$PWD/DTitlebar \
     $$PWD/DWindow \
     $$PWD/DMainWindow \
@@ -232,4 +249,5 @@ includes.files += \
     $$PWD/DWindowGroupLeader \
     $$PWD/DAnchors \
     $$PWD/DSegmentedControl \
-    $$PWD/DSegmentedHighlight
+    $$PWD/DSegmentedHighlight \
+    $$PWD/DApplicationHelper
