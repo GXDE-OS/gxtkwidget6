@@ -49,6 +49,8 @@ public:
     // static void registerWidget(QWidget *widget, const QStringList &propertys = QStringList());
     static void registerWidget(QWidget *widget, const QString &filename, const QStringList &propertys = QStringList());
 
+    void FollowSystemDefaultTheme();
+
 public Q_SLOTS:
     void updateQss();
     void updateThemeOnParentChanged(QWidget *widget);

@@ -22,6 +22,12 @@
 #include <QStyle>
 #include <QStyleFactory>
 
+#include <QProcess>
+#include <QDBusMessage>
+#include <QDBusConnection>
+#include <QDBusInterface>
+#include <QMessageBox>
+
 #include <DObjectPrivate>
 
 #include <private/qstylesheetstyle_p.h>
@@ -566,6 +572,20 @@ DThemeManager::DThemeManager()
     , DObject(*new DThemeManagerPrivate(this))
 {
     setTheme("light");
+}
+
+void DThemeManager::FollowSystemDefaultTheme()
+{
+    // 使用 dbus 获取当前系统主题
+    QDBusInterface dbus("com.deepin.daemon.Appearance",
+                        "/com/deepin/daemon/Appearance",
+                        "com.deepin.daemon.Appearance");
+    QString resResult = dbus.property("GtkTheme").toString();
+    qDebug() << resResult;
+    if(resResult.contains("dark")){
+        setTheme("dark");
+        return;
+    }
 }
 
 bool DThemeManager::eventFilter(QObject *watched, QEvent *event)
