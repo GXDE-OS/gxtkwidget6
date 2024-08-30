@@ -68,6 +68,7 @@ HEADERS += $$PWD/dslider.h\
     $$PWD/dswitchbutton.h \
     $$PWD/dsegmentedcontrol.h \
     $$PWD/dlineedit.h \
+    $$PWD/dwidget.h \
     $$PWD/dwindowmaxbutton.h \
     $$PWD/dwindowminbutton.h \
     $$PWD/dwindowclosebutton.h \
@@ -146,6 +147,7 @@ SOURCES += $$PWD/dslider.cpp \
     $$PWD/dswitchbutton.cpp\
     $$PWD/dsegmentedcontrol.cpp \
     $$PWD/dlineedit.cpp \
+    $$PWD/dwidget.cpp \
     $$PWD/dwindowmaxbutton.cpp \
     $$PWD/dwindowminbutton.cpp \
     $$PWD/dwindowclosebutton.cpp \
@@ -208,12 +210,17 @@ INCLUDEPATH += $$PWD
 
 includes.files += $$PWD/*.h
 includes.files += \
+    $$PWD/DListWidget \
+    $$PWD/DWidget \
+    $$PWD/DFontSizeManager \
+    $$PWD/DPushButton \
     $$PWD/DGuiApplicationHelper \
     $$PWD/DApplicationHelper \
     $$PWD/DPalette \
     $$PWD/DListView \
     $$PWD/DCheckBox \
     $$PWD/DDialog \
+    $$PWD/DImageButton \
     $$PWD/DLabel \
     $$PWD/DTitlebar \
     $$PWD/DWindow \
