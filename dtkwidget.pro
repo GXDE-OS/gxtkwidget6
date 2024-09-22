@@ -1,2 +1,2 @@
-load(dtk_lib)
+include($$PWD/dtk_lib.prf)
 
