@@ -150,10 +150,12 @@ void DAboutDialogPrivate::init()
     mainLayout->addWidget(descriptionLabel, Qt::AlignHCenter);
     mainLayout->addSpacing(7);
     mainLayout->addWidget(licenseLabel, Qt::AlignHCenter);
+    //mainLayout->addWidget(new QLabel("                                                    "), Qt::AlignHCenter);
 
     QWidget  *mainContent = new QWidget;
     mainContent->setLayout(mainLayout);
-    q->addContent(mainContent);
+    // 设置为居中以解决显示异常的问题
+    q->addContent(mainContent, Qt::AlignCenter);
 
     q->setFixedWidth(400);
 
