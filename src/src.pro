@@ -1,7 +1,7 @@
 TARGET = dtkwidget
 TEMPLATE = lib
 QT += dtkcore
-load(dtk_build)
+include($$PWD/../dtk_build.prf)
 
 CONFIG += internal_module
 
@@ -113,6 +113,6 @@ defineTest(updateDtkWidgetConfigFile) {
 
 INSTALLS += includes target
 
-load(dtk_cmake)
+include($$PWD/../dtk_cmake.prf)
 
-load(dtk_module)
+include($$PWD/../dtk_module.prf)
