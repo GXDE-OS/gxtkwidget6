@@ -4,9 +4,10 @@ isEmpty(TARGET): error(set TARGET first)
 
 defineTest(checkDtkVersion) {
     isEmpty(VERSION) {
-        !isEqual(TARGET, dtkcore) {
-            VERSION = $${QT.dtkcore.VERSION}
-        }
+        # 因为是使用 dtk5 的 core,故不能直接读 core 的版本号来用
+        #!isEqual(TARGET, dtkcore) {
+        #    VERSION = $${QT.dtkcore.VERSION}
+        #}
 
         # TODO: failed in windows
         isEmpty(VERSION): VERSION = $$system(git describe --tags --abbrev=0)
