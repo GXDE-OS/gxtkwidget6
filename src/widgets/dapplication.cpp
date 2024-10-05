@@ -67,6 +67,8 @@
 #include <QGSettings>
 #endif
 
+#include <QStyleFactory>
+
 #define DXCB_PLUGIN_KEY "dxcb"
 #define DXCB_PLUGIN_SYMBOLIC_PROPERTY "_d_isDxcb"
 #define QT_THEME_CONFIG_PATH "D_QT_THEME_CONFIG_PATH"
@@ -592,7 +594,17 @@ bool DApplication::loadTranslator(QList<QLocale> localeFallback)
  */
 bool DApplication::loadDXcbPlugin()
 {
+    // 设置主题为 dlight 以跳过调用 dde-qt5integration 来解决 dtk2 关闭过程中异常崩溃的问题
+    // 注：必须在 QApplication 对象创建前设置该环境变量，否则依然会调用 dde-qt5integration
+    //  而非 gxde-qt5integration
+    qputenv("QT_STYLE_OVERRIDE", "dlight");
+
     Q_ASSERT_X(!qApp, "DApplication::loadDxcbPlugin", "Must call before QGuiApplication defined object");
+
+    // 如果为 WAYLAND 环境则不配置 dxcb 插件
+    if (qgetenv("XDG_SESSION_TYPE") == "wayland") {
+        return false;
+    }
 
     if (!QPlatformIntegrationFactory::keys().contains(DXCB_PLUGIN_KEY)) {
         return false;
