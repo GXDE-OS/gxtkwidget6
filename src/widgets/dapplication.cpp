@@ -381,7 +381,7 @@ DApplication::DApplication(int &argc, char **argv) :
 {
     qputenv("QT_QPA_PLATFORM", QByteArray());
     // 通过读取 QT_STYLE_OVERRIDE_BAK 来还原原来 QT_STYLE_OVERRIDE 的设置
-    qputenv("QT_STYLE_OVERRIDE", qgetenv("QT_STYLE_OVERRIDE_BAK"));
+    qputenv("QT_STYLE_OVERRIDE", qgetenv("QT_STYLE_OVERRIDE_BAK_c80071c7-853e-4a3f-a27d-4145ae662bb9"));
     qputenv("QT_STYLE_OVERRIDE_BAK", QByteArray());
 
     // FIXME: fix bug in nvidia prime workaround, do not know effoct, must test more!!!
@@ -600,7 +600,7 @@ bool DApplication::loadDXcbPlugin()
     // 设置主题为 dlight 以跳过调用 dde-qt5integration 来解决 dtk2 关闭过程中异常崩溃的问题
     // 注：必须在 QApplication 对象创建前设置该环境变量，否则依然会调用 dde-qt5integration
     //  而非 gxde-qt5integration
-    qputenv("QT_STYLE_OVERRIDE_BAK",
+    qputenv("QT_STYLE_OVERRIDE_BAK_c80071c7-853e-4a3f-a27d-4145ae662bb9",
             qgetenv("QT_STYLE_OVERRIDE"));  // 通过设置 QT_STYLE_OVERRIDE_BAK 来备份原来的设置
     qputenv("QT_STYLE_OVERRIDE", "dlight");
 
