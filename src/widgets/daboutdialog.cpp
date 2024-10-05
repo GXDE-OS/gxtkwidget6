@@ -176,14 +176,14 @@ void DAboutDialogPrivate::initWebsiteInfo()
 
     //websiteName = isProfessional ? "www.deepin.com" : "www.deepin.org";
     //websiteLink = QString("https://www.deepin.org/original/%1/").arg(qApp->applicationName());
-    websiteName = "www.gxde.top";
-    websiteLink = "https://www.gxde.top";
+    websiteName = "www.gxde.org";
+    websiteLink = "https://www.gxde.org";
 
 #else
     //websiteName = "www.deepin.org";
     //websiteLink = "https://www.deepin.org";
-    websiteName = "www.gxde.top";
-    websiteLink = "https://www.gxde.top";
+    websiteName = "www.gxde.org";
+    websiteLink = "https://www.gxde.org";
 #endif
 }
 
