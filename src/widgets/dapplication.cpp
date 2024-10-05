@@ -380,6 +380,9 @@ DApplication::DApplication(int &argc, char **argv) :
     DObject(*new DApplicationPrivate(this))
 {
     qputenv("QT_QPA_PLATFORM", QByteArray());
+    // 通过读取 QT_STYLE_OVERRIDE_BAK 来还原原来 QT_STYLE_OVERRIDE 的设置
+    qputenv("QT_STYLE_OVERRIDE", qgetenv("QT_STYLE_OVERRIDE_BAK"));
+    qputenv("QT_STYLE_OVERRIDE_BAK", QByteArray());
 
     // FIXME: fix bug in nvidia prime workaround, do not know effoct, must test more!!!
     // 在龙芯和申威上，xcb插件中加载glx相关库（r600_dri.so等）会额外耗时1.xs（申威应该更长）
@@ -597,6 +600,8 @@ bool DApplication::loadDXcbPlugin()
     // 设置主题为 dlight 以跳过调用 dde-qt5integration 来解决 dtk2 关闭过程中异常崩溃的问题
     // 注：必须在 QApplication 对象创建前设置该环境变量，否则依然会调用 dde-qt5integration
     //  而非 gxde-qt5integration
+    qputenv("QT_STYLE_OVERRIDE_BAK",
+            qgetenv("QT_STYLE_OVERRIDE"));  // 通过设置 QT_STYLE_OVERRIDE_BAK 来备份原来的设置
     qputenv("QT_STYLE_OVERRIDE", "dlight");
 
     Q_ASSERT_X(!qApp, "DApplication::loadDxcbPlugin", "Must call before QGuiApplication defined object");
