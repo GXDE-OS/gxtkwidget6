@@ -81,6 +81,7 @@ DApplicationPrivate::DApplicationPrivate(DApplication *q) :
     DObjectPrivate(q)
 {
 #ifdef Q_OS_LINUX
+    if (qgetenv("XDG_SESSION_TYPE") != "wayland") {
     StartupNotificationMonitor *monitor = StartupNotificationMonitor::instance();
     auto cancelNotification = [this, q](const QString id) {
         m_monitoredStartupApps.removeAll(id);
@@ -100,6 +101,7 @@ DApplicationPrivate::DApplicationPrivate(DApplication *q) :
     });
     QObject::connect(monitor, &StartupNotificationMonitor::appStartupCompleted,
                      q, cancelNotification);
+    }
 #endif
 }
 
@@ -608,6 +610,7 @@ bool DApplication::loadDXcbPlugin()
 
     // 如果为 WAYLAND 环境则不配置 dxcb 插件
     if (qgetenv("XDG_SESSION_TYPE") == "wayland") {
+        qputenv("QT_QPA_PLATFORM", "wayland");
         return false;
     }
 
