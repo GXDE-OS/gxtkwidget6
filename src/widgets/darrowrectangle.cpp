@@ -1169,17 +1169,19 @@ void DArrowRectanglePrivate::resizeWithContent()
     q->setFixedSize(q->getFixedSize());
 
 #ifdef Q_OS_LINUX
-    const qreal ratio = qApp->devicePixelRatio();
-    if (!m_handle && !floatMode) {
-        XRectangle m_contentXRect;
-        m_contentXRect.x = m_content->pos().x() * ratio;
-        m_contentXRect.y = m_content->pos().y() * ratio;
-        m_contentXRect.width = m_content->width() * ratio;
-        m_contentXRect.height = m_content->height() * ratio;
-        XShapeCombineRectangles(QX11Info::display(), q->winId(), ShapeInput,
-                                0,
-                                0,
-                                &m_contentXRect, 1, ShapeSet, YXBanded);
+    if (qgetenv("XDG_SESSION_TYPE") != "wayland") {
+        const qreal ratio = qApp->devicePixelRatio();
+        if (!m_handle && !floatMode) {
+            XRectangle m_contentXRect;
+            m_contentXRect.x = m_content->pos().x() * ratio;
+            m_contentXRect.y = m_content->pos().y() * ratio;
+            m_contentXRect.width = m_content->width() * ratio;
+            m_contentXRect.height = m_content->height() * ratio;
+            XShapeCombineRectangles(QX11Info::display(), q->winId(), ShapeInput,
+                                    0,
+                                    0,
+                                    &m_contentXRect, 1, ShapeSet, YXBanded);
+        }
     }
 #endif
 }
