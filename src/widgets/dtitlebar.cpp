@@ -285,6 +285,9 @@ void DTitlebarPrivate::updateButtonsState(Qt::WindowFlags type)
     bool isFullscreen = targetWindow()->windowState().testFlag(Qt::WindowFullScreen);
 
     bool forceShow = !useDXcb;
+    if (qgetenv("XDG_SESSION_TYPE") == "wayland") {
+        forceShow = false;
+    }
 #ifndef Q_OS_LINUX
     forceShow = false;
 #endif

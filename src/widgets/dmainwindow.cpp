@@ -50,7 +50,10 @@ DMainWindowPrivate::DMainWindowPrivate(DMainWindow *qq)
 #ifdef Q_OS_MAC
         OSX::HideWindowTitlebar(qq->winId());
 #else
-        titlebar->setEmbedMode(true);
+        if (qgetenv("XDG_SESSION_TYPE") != "wayland") {
+            titlebar->setEmbedMode(true);
+        }
+
 #endif
     }
 }
