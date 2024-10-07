@@ -81,7 +81,7 @@ DApplicationPrivate::DApplicationPrivate(DApplication *q) :
     DObjectPrivate(q)
 {
 #ifdef Q_OS_LINUX
-    if (qgetenv("XDG_SESSION_TYPE") != "wayland") {
+    if (qgetenv("XDG_SESSION_TYPE") != "wayland" || qgetenv("DTK2_XWAYLAND") != "") {
         StartupNotificationMonitor *monitor = StartupNotificationMonitor::instance();
         auto cancelNotification = [this, q](const QString id) {
             m_monitoredStartupApps.removeAll(id);
@@ -609,10 +609,10 @@ bool DApplication::loadDXcbPlugin()
     Q_ASSERT_X(!qApp, "DApplication::loadDxcbPlugin", "Must call before QGuiApplication defined object");
 
     // 如果为 WAYLAND 环境则不配置 dxcb 插件
-    if (qgetenv("XDG_SESSION_TYPE") == "wayland") {
-        qputenv("QT_QPA_PLATFORM", "wayland");
-        return false;
-    }
+    //if (qgetenv("XDG_SESSION_TYPE") == "wayland" && qgetenv("DTK2_XWAYLAND") == "") {
+    //    qputenv("QT_QPA_PLATFORM", "wayland");
+    //    return false;
+    //}
 
     if (!QPlatformIntegrationFactory::keys().contains(DXCB_PLUGIN_KEY)) {
         return false;

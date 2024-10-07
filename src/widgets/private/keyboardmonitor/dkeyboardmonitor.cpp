@@ -171,7 +171,7 @@ DKeyboardMonitor *DKeyboardMonitor::instance()
 
 bool DKeyboardMonitor::isCapslockOn()
 {
-    if (qgetenv("XDG_SESSION_TYPE") == "wayland") {
+    if (qgetenv("XDG_SESSION_TYPE") == "wayland" && qgetenv("DTK2_XWAYLAND") == "") {
         return false;
     }
     bool result;

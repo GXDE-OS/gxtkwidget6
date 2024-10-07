@@ -51,7 +51,7 @@ DMainWindowPrivate::DMainWindowPrivate(DMainWindow *qq)
         OSX::HideWindowTitlebar(qq->winId());
 #else
         // Wayland 下不设置 setEmbedMode 以便正确显示右上角的关闭按钮
-        if (qgetenv("XDG_SESSION_TYPE") != "wayland") {
+        if (qgetenv("XDG_SESSION_TYPE") != "wayland" || qgetenv("DTK2_XWAYLAND") != "") {
             titlebar->setEmbedMode(true);
         }
         else {
@@ -117,7 +117,7 @@ void DMainWindowPrivate::init()
 
     // 仅在 Wayland 下使用 
     // TODO: mouseReleaseEvent 事件依旧存在问题: https://bbs.deepin.org.cn/zh/post/279273
-    if (qgetenv("XDG_SESSION_TYPE") == "wayland") {
+    if (qgetenv("XDG_SESSION_TYPE") == "wayland" && qgetenv("DTK2_XWAYLAND") == "") {
         titlebar->setDMainWindow(q);
     }
 }
