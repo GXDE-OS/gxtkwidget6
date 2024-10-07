@@ -23,6 +23,7 @@
 
 #include <dobject.h>
 #include "dtkwidget_global.h"
+#include "dmainwindow.h"
 
 DWIDGET_BEGIN_NAMESPACE
 
@@ -62,6 +63,8 @@ public:
 
     void setDisableFlags(Qt::WindowFlags flags);
     Qt::WindowFlags disableFlags() const;
+
+    void setDMainWindow(DMainWindow *window);
 Q_SIGNALS:
     void optionClicked();
     void doubleClicked();
@@ -101,6 +104,8 @@ private:
     D_PRIVATE_SLOT(void _q_toggleWindowState())
     D_PRIVATE_SLOT(void _q_showMinimized())
     D_PRIVATE_SLOT(void _q_onTopWindowMotifHintsChanged(quint32))
+
+    DMainWindow *m_dwindow = NULL;
 
 #ifndef QT_NO_MENU
     D_PRIVATE_SLOT(void _q_addDefaultMenuItems())

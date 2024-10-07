@@ -666,6 +666,11 @@ void DTitlebar::showEvent(QShowEvent *event)
     }
 }
 
+void DTitlebar::setDMainWindow(DMainWindow *window)
+{
+    this->m_dwindow = window;
+}
+
 void DTitlebar::mousePressEvent(QMouseEvent *event)
 {
     D_D(DTitlebar);
@@ -674,6 +679,10 @@ void DTitlebar::mousePressEvent(QMouseEvent *event)
     if (event->button() == Qt::RightButton) {
         DWindowManagerHelper::popupSystemWindowMenu(window()->windowHandle());
         return;
+    }
+    if (m_dwindow) {
+        // If you set DMainWindow, it can move
+        m_dwindow->windowHandle()->startSystemMove();
     }
 
 #ifdef DTK_TITLE_DRAG_WINDOW
@@ -1072,6 +1081,8 @@ Qt::WindowFlags DTitlebar::disableFlags() const
 
 void DTitlebar::mouseMoveEvent(QMouseEvent *event)
 {
+    //self.win.windowHandle().startSystemMove();
+    //windowHandle()->startSystemMove();
     Qt::MouseButton button = event->buttons() & Qt::LeftButton ? Qt::LeftButton : Qt::NoButton;
     if (event->buttons() == Qt::LeftButton /*&& d->mousePressed*/) {
         Q_EMIT mouseMoving(button);

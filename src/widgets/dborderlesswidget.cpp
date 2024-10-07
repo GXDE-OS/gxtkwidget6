@@ -152,8 +152,8 @@ void DBorderlessWidgetPrivate::updateContentsMargins()
 void DBorderlessWidgetPrivate::_q_onTitleBarMousePressed(Qt::MouseButtons buttons) const
 {
 #ifdef Q_OS_LINUX
+    D_QC(DBorderlessWidget);
     if (qgetenv("XDG_SESSION_TYPE") != "wayland") {
-        D_QC(DBorderlessWidget);
 
         if (buttons != Qt::LeftButton) {
             XUtils::CancelMoveWindow(q, Qt::LeftButton);
@@ -247,6 +247,7 @@ DBorderlessWidget::DBorderlessWidget(DBorderlessWidgetPrivate &dd, QWidget *pare
 {
     D_D(DBorderlessWidget);
     d->init();
+    qDebug() << "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB";
     QWidget::setMouseTracking(true);
 
     QWidget::setAttribute(Qt::WA_TranslucentBackground, true);
@@ -260,14 +261,17 @@ DBorderlessWidget::DBorderlessWidget(DBorderlessWidgetPrivate &dd, QWidget *pare
     }
 #endif
 #ifdef DTK_TITLE_DRAG_WINDOW
+    qDebug() << "AppleAppleAppleAppleAppleAppleApple";
     connect(d->titlebar, &DTitlebar::mousePosMoving,
     this, [ = ](Qt::MouseButton /*button*/, QPoint pos) {
+    	qDebug() << pos;
         move(pos - d->m_LastMousePos);
     });
 
     connect(d->titlebar, &DTitlebar::mousePosPressed,
     this, [ = ](Qt::MouseButtons /*button*/, QPoint pos) {
         // TODO: fix margin
+    	qDebug() << pos;
         pos.setY(pos.y() - 10);
         d->m_LastMousePos = pos - this->mapToParent(this->pos());
     });
@@ -300,8 +304,8 @@ void DBorderlessWidget::changeEvent(QEvent *event)
 void DBorderlessWidget::mouseMoveEvent(QMouseEvent *event)
 {
 #ifdef Q_OS_LINUX
+    D_D(DBorderlessWidget);
     if (qgetenv("XDG_SESSION_TYPE") != "wayland") {
-        D_D(DBorderlessWidget);
 
         const int x = event->x();
         const int y = event->y();
@@ -318,8 +322,8 @@ void DBorderlessWidget::mouseMoveEvent(QMouseEvent *event)
 void DBorderlessWidget::mousePressEvent(QMouseEvent *event)
 {
 #ifdef Q_OS_LINUX
+    D_D(DBorderlessWidget);
     if (qgetenv("XDG_SESSION_TYPE") != "wayland") {
-        D_D(DBorderlessWidget);
 
         const int x = event->x();
         const int y = event->y();
@@ -340,8 +344,8 @@ void DBorderlessWidget::mousePressEvent(QMouseEvent *event)
 void DBorderlessWidget::mouseReleaseEvent(QMouseEvent *event)
 {
 #ifdef Q_OS_LINUX
+    D_D(DBorderlessWidget);
     if (qgetenv("XDG_SESSION_TYPE") != "wayland") {
-        D_D(DBorderlessWidget);
         d->resizingCornerEdge = XUtils::CornerEdge::kInvalid;
     }
 #endif

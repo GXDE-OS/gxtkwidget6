@@ -171,6 +171,9 @@ DKeyboardMonitor *DKeyboardMonitor::instance()
 
 bool DKeyboardMonitor::isCapslockOn()
 {
+    if (qgetenv("XDG_SESSION_TYPE") == "wayland") {
+        return false;
+    }
     bool result;
     unsigned int n = 0;
     static Display* d = QX11Info::display();

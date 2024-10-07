@@ -610,7 +610,7 @@ bool DApplication::loadDXcbPlugin()
 
     // 如果为 WAYLAND 环境则不配置 dxcb 插件
     if (qgetenv("XDG_SESSION_TYPE") == "wayland") {
-        qputenv("QT_QPA_PLATFORM", "dwayland");
+        qputenv("QT_QPA_PLATFORM", "wayland");
         return false;
     }
 

@@ -25,6 +25,7 @@
 #include <QWidget>
 #include <QLabel>
 #include <QDebug>
+#include <QWindow>
 
 #include "danchors.h"
 #include "dialog_constants.h"
@@ -411,13 +412,18 @@ void DAbstractDialog::mouseMoveEvent(QMouseEvent *event)
     D_D(DAbstractDialog);
 
     if (d->handle) {
-        d->handle->setEnableSystemMove(true);
-
         return QDialog::mouseMoveEvent(event);
     }
 
     if (d->mousePressed) {
-        move(event->globalPos() - d->dragPosition);
+        if (qgetenv("XDG_SESSION_TYPE") == "wayland") {
+            // 仅在 Wayland 下启用
+            // TODO: 当前 mouseReleaseEvent 事件依旧存在问题: https://bbs.deepin.org.cn/zh/post/279273
+            this->windowHandle()->startSystemMove();
+        }
+        else {
+            move(event->globalPos() - d->dragPosition);
+        }
         d->mouseMoved = true;
     }
 
