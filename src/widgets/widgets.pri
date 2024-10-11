@@ -272,7 +272,8 @@ includes.files += \
     $$PWD/DAnchors \
     $$PWD/DSegmentedControl \
     $$PWD/DSegmentedHighlight \
-    $$PWD/DApplicationHelper
+    $$PWD/DApplicationHelper\
+    $$PWD/DCommandLinkButton
 
 DISTFILES += \
     $$PWD/images/arrow_left_hover.png \

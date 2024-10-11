@@ -1,0 +1,13 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${prefix}/lib/x86_64-linux-gnu
+includedir=${prefix}/include/dtk5/DCore/../DWidget
+
+
+Name: DTK_WIDGET
+Description: Deepin Tool Kit dtkwidget header files
+Version: 2.2.5.7
+Libs: -ldtkwidget 
+Cflags: -I${includedir}
+Requires: dtkcore
+

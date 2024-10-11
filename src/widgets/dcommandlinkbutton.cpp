@@ -4,21 +4,9 @@
 #include <QPainter>
 #include <QFontMetrics>
 #include <QWidget>
+#include "dcommandlinkbutton.h"
 DWIDGET_BEGIN_NAMESPACE
-class DCommandLinkButton : public QAbstractButton
-{
-    Q_OBJECT
 
-public:
-    explicit DCommandLinkButton(const QString &text, QWidget *parent = nullptr);
-
-    QSize sizeHint() const override;
-
-protected:
-    void initStyleOption(QStyleOptionButton *option) const;
-    void paintEvent(QPaintEvent *event) override;
-
-private:
     enum Margins {
         LeftMargins = 3,
         RightMargins = LeftMargins,
@@ -26,13 +14,14 @@ private:
         BottomMargins = LeftMargins,
         TextMargins = 4
     };
-};
+
 
 DCommandLinkButton::DCommandLinkButton(const QString &text, QWidget *parent)
     : QAbstractButton(parent)
 {
     this->setText(text);
 }
+
 
 QSize DCommandLinkButton::sizeHint() const
 {
@@ -50,7 +39,8 @@ void DCommandLinkButton::initStyleOption(QStyleOptionButton *option) const
         option->state |= QStyle::State_Sunken;
 
     QPalette pa = this->palette();
-    option->palette.setBrush(QPalette::ButtonText, pa.highlight());
+    option->palette.setBrush(QPalette::ButtonText, QColor(0, 122, 255)); // 设置为蓝色
+    option->palette.setBrush(QPalette::Button, Qt::transparent); // 背景透明
     option->text = this->text();
 }
 
@@ -62,6 +52,18 @@ void DCommandLinkButton::paintEvent(QPaintEvent *e)
     initStyleOption(&opt);
 
     QPainter painter(this);
-    style()->drawControl(QStyle::CE_PushButton, &opt, &painter, this);
+    painter.setPen(QColor(0, 122, 255));  // 蓝色文字
+    style()->drawControl(QStyle::CE_PushButtonLabel, &opt, &painter, this);
+}
+void DCommandLinkButton::enterEvent(QEvent *event)
+{
+    Q_UNUSED(event)
+    setCursor(Qt::PointingHandCursor);  // 鼠标进入时设置为手型
+}
+
+void DCommandLinkButton::leaveEvent(QEvent *event)
+{
+    Q_UNUSED(event)
+    unsetCursor();  // 鼠标离开时恢复默认
 }
 DWIDGET_END_NAMESPACE

@@ -1,8 +1,9 @@
-dtkwidget2 (15.14-2.2.5.7) UNRELEASED; urgency=medium
+dtkwidget2 (15.14-2.2.5.8) UNRELEASED; urgency=medium
 
   * 修复大部分 dtk2 应用退出时异常崩溃的问题
   * 修复在 dtk2 中开启 dtk5 应用时样式错误的问题
   * Wayland 初步支持
+  * 添加 DCommandLinkButton
 
  -- gfdgd_xi <3025613752@qq.com>  Mon, 07 Oct 2024 22:28:14 +0800
 
