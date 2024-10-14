@@ -43,18 +43,12 @@ isEmpty(DTK_NO_MULTIMEDIA){
 }
 
 HEADERS += $$PWD/dslider.h\
-    $$PWD/DAction \
-    $$PWD/DAnchorsBase \
-    $$PWD/DBorderlessWindow \
-    $$PWD/DCommandLinkButton \
-    $$PWD/DMenu \
     $$PWD/dapplicationhelper.h \
     $$PWD/dcheckbox.h \
-    $$PWD/dcommandlinkbutton.h \
     $$PWD/ddialog.h \
     $$PWD/dguiapplicationhelper.h \
-    $$PWD/dinputdialog_p.h \
     $$PWD/dpalette.h \
+    $$PWD/dinputdialog_p.h \
     $$PWD/dplatformtheme.h \
     $$PWD/dthememanager.h \
     $$PWD/dapplication.h \
@@ -127,13 +121,12 @@ HEADERS += $$PWD/dslider.h\
     $$PWD/danchors.h \
     $$PWD/dwindowgroupleader.h \
     $$PWD/dborderlesswidget.h \
-    $$PWD/dborderlesswindow.h \
-    $$PWD/dx11window.h
+    $$PWD/dcommandlinkbutton.h \
+    $$PWD/dborderlesswindow.h
 
 SOURCES += $$PWD/dslider.cpp \
     $$PWD/dapplicationhelper.cpp \
     $$PWD/dcheckbox.cpp \
-    $$PWD/dcommandlinkbutton.cpp \
     $$PWD/ddialog.cpp \
     $$PWD/dguiapplicationhelper.cpp \
     $$PWD/dpalette.cpp \
@@ -208,16 +201,11 @@ SOURCES += $$PWD/dslider.cpp \
     $$PWD/danchors.cpp \
     $$PWD/dwindowgroupleader.cpp \
     $$PWD/dborderlesswidget.cpp \
+    $$PWD/dcommandlinkbutton.cpp \
     $$PWD/dborderlesswindow.cpp
 
 RESOURCES += \
-    $$PWD/icons.qrc \
-    $$PWD/icons.qrc \
     $$PWD/themes/dui_theme_dark.qrc \
-    $$PWD/themes/dui_theme_dark.qrc \
-    $$PWD/themes/dui_theme_dark.qrc \
-    $$PWD/themes/dui_theme_light.qrc \
-    $$PWD/themes/dui_theme_light.qrc \
     $$PWD/themes/dui_theme_light.qrc \
     $$PWD/icons.qrc
 
@@ -237,6 +225,11 @@ includes.files += \
     $$PWD/DDialog \
     $$PWD/DImageButton \
     $$PWD/DLabel \
+    $$PWD/DAction \
+    $$PWD/DAnchorsBase \
+    $$PWD/DBorderlessWindow \
+    $$PWD/DCommandLinkButton \
+    $$PWD/DMenu \
     $$PWD/DTitlebar \
     $$PWD/DWindow \
     $$PWD/DMainWindow \
@@ -272,401 +265,4 @@ includes.files += \
     $$PWD/DAnchors \
     $$PWD/DSegmentedControl \
     $$PWD/DSegmentedHighlight \
-    $$PWD/DApplicationHelper\
-    $$PWD/DCommandLinkButton
-
-DISTFILES += \
-    $$PWD/images/arrow_left_hover.png \
-    $$PWD/images/arrow_left_normal.png \
-    $$PWD/images/arrow_left_press.png \
-    $$PWD/images/arrow_left_white.png \
-    $$PWD/images/arrow_right_hover.png \
-    $$PWD/images/arrow_right_normal.png \
-    $$PWD/images/arrow_right_press.png \
-    $$PWD/images/arrow_right_white.png \
-    $$PWD/images/deepin-logo.svg \
-    $$PWD/images/dialog_close_round_hover.png \
-    $$PWD/images/dialog_close_round_hover@2x.png \
-    $$PWD/images/dialog_close_round_normal.png \
-    $$PWD/images/dialog_close_round_normal@2x.png \
-    $$PWD/images/dialog_close_round_press.png \
-    $$PWD/images/dialog_close_round_press@2x.png \
-    $$PWD/private/mpris/org.freedesktop.DBus.xml \
-    $$PWD/private/mpris/org.mpris.MediaPlayer2.xml \
-    $$PWD/themes/dark/Dtk--Widget--DAboutDialog.theme \
-    $$PWD/themes/dark/Dtk--Widget--DAbstractDialog.theme \
-    $$PWD/themes/dark/Dtk--Widget--DArrowButton.theme \
-    $$PWD/themes/dark/Dtk--Widget--DBaseButton.theme \
-    $$PWD/themes/dark/Dtk--Widget--DBaseExpand.theme \
-    $$PWD/themes/dark/Dtk--Widget--DBaseLine.theme \
-    $$PWD/themes/dark/Dtk--Widget--DBoxWidget.theme \
-    $$PWD/themes/dark/Dtk--Widget--DButtonList.theme \
-    $$PWD/themes/dark/Dtk--Widget--DCircleProgress.theme \
-    $$PWD/themes/dark/Dtk--Widget--DDialog.theme \
-    $$PWD/themes/dark/Dtk--Widget--DFileChooserEdit.theme \
-    $$PWD/themes/dark/Dtk--Widget--DHeaderLine.theme \
-    $$PWD/themes/dark/Dtk--Widget--DImageButton.theme \
-    $$PWD/themes/dark/Dtk--Widget--DIpv4LineEdit.theme \
-    $$PWD/themes/dark/Dtk--Widget--DLabel.theme \
-    $$PWD/themes/dark/Dtk--Widget--DLineEdit.theme \
-    $$PWD/themes/dark/Dtk--Widget--DLinkButton.theme \
-    $$PWD/themes/dark/Dtk--Widget--DListView.theme \
-    $$PWD/themes/dark/Dtk--Widget--DLoadingIndicator.theme \
-    $$PWD/themes/dark/Dtk--Widget--DOption.theme \
-    $$PWD/themes/dark/Dtk--Widget--DOptionList.theme \
-    $$PWD/themes/dark/Dtk--Widget--DPasswdEditAnimated.theme \
-    $$PWD/themes/dark/Dtk--Widget--DPasswordEdit.theme \
-    $$PWD/themes/dark/Dtk--Widget--DScrollArea.theme \
-    $$PWD/themes/dark/Dtk--Widget--DScrollBar.theme \
-    $$PWD/themes/dark/Dtk--Widget--DSearchEdit.theme \
-    $$PWD/themes/dark/Dtk--Widget--DSegmentedControl.theme \
-    $$PWD/themes/dark/Dtk--Widget--DSeparatorHorizontal.theme \
-    $$PWD/themes/dark/Dtk--Widget--DSeparatorVertical.theme \
-    $$PWD/themes/dark/Dtk--Widget--DSettingsDialog.theme \
-    $$PWD/themes/dark/Dtk--Widget--DShortcutEdit.theme \
-    $$PWD/themes/dark/Dtk--Widget--DSlider.theme \
-    $$PWD/themes/dark/Dtk--Widget--DSpinBox.theme \
-    $$PWD/themes/dark/Dtk--Widget--DStackWidget.theme \
-    $$PWD/themes/dark/Dtk--Widget--DSwitchButton.theme \
-    $$PWD/themes/dark/Dtk--Widget--DTextButton.theme \
-    $$PWD/themes/dark/Dtk--Widget--DTextEdit.theme \
-    $$PWD/themes/dark/Dtk--Widget--DTitlebar.theme \
-    $$PWD/themes/dark/Dtk--Widget--DToast.theme \
-    $$PWD/themes/dark/Dtk--Widget--DWindowCloseButton.theme \
-    $$PWD/themes/dark/Dtk--Widget--DWindowMaxButton.theme \
-    $$PWD/themes/dark/Dtk--Widget--DWindowMinButton.theme \
-    $$PWD/themes/dark/Dtk--Widget--DWindowOptionButton.theme \
-    $$PWD/themes/dark/Dtk--Widget--DWindowRestoreButton.theme \
-    $$PWD/themes/dark/dialogs/images/check_focus.png \
-    $$PWD/themes/dark/dialogs/images/dark_check.png \
-    $$PWD/themes/dark/dialogs/images/dark_check_checked.png \
-    $$PWD/themes/dark/dialogs/images/dark_check_checked_hover.png \
-    $$PWD/themes/dark/dialogs/images/dark_close_small_hover.png \
-    $$PWD/themes/dark/dialogs/images/dark_close_small_normal.png \
-    $$PWD/themes/dark/dialogs/images/dark_close_small_press.png \
-    $$PWD/themes/dark/dialogs/images/dark_minimise_small_hover.png \
-    $$PWD/themes/dark/dialogs/images/dark_minimise_small_normal.png \
-    $$PWD/themes/dark/dialogs/images/dark_minimise_small_press.png \
-    $$PWD/themes/dark/dialogs/images/user-trash-full.png \
-    $$PWD/themes/dark/images/add_hover.png \
-    $$PWD/themes/dark/images/add_normal.png \
-    $$PWD/themes/dark/images/add_press.png \
-    $$PWD/themes/dark/images/arrow_down_hover.png \
-    $$PWD/themes/dark/images/arrow_down_hover.svg \
-    $$PWD/themes/dark/images/arrow_down_insensitive.svg \
-    $$PWD/themes/dark/images/arrow_down_normal.png \
-    $$PWD/themes/dark/images/arrow_down_normal.svg \
-    $$PWD/themes/dark/images/arrow_down_press.png \
-    $$PWD/themes/dark/images/arrow_down_press.svg \
-    $$PWD/themes/dark/images/arrow_down_white.png \
-    $$PWD/themes/dark/images/arrow_left_hover.png \
-    $$PWD/themes/dark/images/arrow_left_normal.png \
-    $$PWD/themes/dark/images/arrow_left_press.png \
-    $$PWD/themes/dark/images/arrow_left_white.png \
-    $$PWD/themes/dark/images/arrow_right_hover.png \
-    $$PWD/themes/dark/images/arrow_right_normal.png \
-    $$PWD/themes/dark/images/arrow_right_press.png \
-    $$PWD/themes/dark/images/arrow_right_white.png \
-    $$PWD/themes/dark/images/arrow_up_hover.png \
-    $$PWD/themes/dark/images/arrow_up_hover.svg \
-    $$PWD/themes/dark/images/arrow_up_insensitive.svg \
-    $$PWD/themes/dark/images/arrow_up_normal.png \
-    $$PWD/themes/dark/images/arrow_up_normal.svg \
-    $$PWD/themes/dark/images/arrow_up_press.png \
-    $$PWD/themes/dark/images/arrow_up_press.svg \
-    $$PWD/themes/dark/images/arrow_up_white.png \
-    $$PWD/themes/dark/images/button_center_normal.png \
-    $$PWD/themes/dark/images/button_center_press.png \
-    $$PWD/themes/dark/images/button_left_normal.png \
-    $$PWD/themes/dark/images/button_left_press.png \
-    $$PWD/themes/dark/images/button_right_normal.png \
-    $$PWD/themes/dark/images/button_right_press.png \
-    $$PWD/themes/dark/images/capslock-clicked.svg \
-    $$PWD/themes/dark/images/capslock-hover.svg \
-    $$PWD/themes/dark/images/capslock-normal.svg \
-    $$PWD/themes/dark/images/checkbox_checked.png \
-    $$PWD/themes/dark/images/checkbox_checked_hover.png \
-    $$PWD/themes/dark/images/checkbox_checked_insensitive.png \
-    $$PWD/themes/dark/images/checkbox_unchecked.png \
-    $$PWD/themes/dark/images/checkbox_unchecked_hover.png \
-    $$PWD/themes/dark/images/checkbox_unchecked_insensitive.png \
-    $$PWD/themes/dark/images/clear_white.png \
-    $$PWD/themes/dark/images/combobox_down_arrow.png \
-    $$PWD/themes/dark/images/combobox_up_arrow.png \
-    $$PWD/themes/dark/images/dark_button_hover_bg.png \
-    $$PWD/themes/dark/images/dark_button_normal_bg.png \
-    $$PWD/themes/dark/images/dark_button_press_bg.png \
-    $$PWD/themes/dark/images/delete_hover.png \
-    $$PWD/themes/dark/images/delete_multi_hover.png \
-    $$PWD/themes/dark/images/delete_multi_normal.png \
-    $$PWD/themes/dark/images/delete_multi_press.png \
-    $$PWD/themes/dark/images/delete_normal.png \
-    $$PWD/themes/dark/images/delete_press.png \
-    $$PWD/themes/dark/images/dock_preview_close_hover.png \
-    $$PWD/themes/dark/images/dock_preview_close_normal.png \
-    $$PWD/themes/dark/images/dock_preview_close_press.png \
-    $$PWD/themes/dark/images/file_24.png \
-    $$PWD/themes/dark/images/folder_24.png \
-    $$PWD/themes/dark/images/folder_up_24.png \
-    $$PWD/themes/dark/images/hide_password_hover.svg \
-    $$PWD/themes/dark/images/hide_password_normal.svg \
-    $$PWD/themes/dark/images/hide_password_press.svg \
-    $$PWD/themes/dark/images/icon_view_hover.png \
-    $$PWD/themes/dark/images/icon_view_normal.png \
-    $$PWD/themes/dark/images/icon_view_press.png \
-    $$PWD/themes/dark/images/input_clear_hover.svg \
-    $$PWD/themes/dark/images/input_clear_normal.svg \
-    $$PWD/themes/dark/images/input_clear_press.svg \
-    $$PWD/themes/dark/images/keyboard-clicked.svg \
-    $$PWD/themes/dark/images/keyboard-hover.svg \
-    $$PWD/themes/dark/images/keyboard-normal.svg \
-    $$PWD/themes/dark/images/list_view_hover.png \
-    $$PWD/themes/dark/images/list_view_normal.png \
-    $$PWD/themes/dark/images/list_view_press.png \
-    $$PWD/themes/dark/images/loadfile_hover.png \
-    $$PWD/themes/dark/images/loadfile_normal.png \
-    $$PWD/themes/dark/images/loadfile_press.png \
-    $$PWD/themes/dark/images/multiselect_active_normal.png \
-    $$PWD/themes/dark/images/multiselect_inactive_hover.png \
-    $$PWD/themes/dark/images/multiselect_inactive_normal.png \
-    $$PWD/themes/dark/images/pw-visible-clicked.svg \
-    $$PWD/themes/dark/images/pw-visible-hover.svg \
-    $$PWD/themes/dark/images/pw-visible-normal.svg \
-    $$PWD/themes/dark/images/radio_selected.png \
-    $$PWD/themes/dark/images/radio_selected_hover.png \
-    $$PWD/themes/dark/images/radio_selected_insensitive.png \
-    $$PWD/themes/dark/images/radio_unselected.png \
-    $$PWD/themes/dark/images/radio_unselected_hover.png \
-    $$PWD/themes/dark/images/radio_unselected_insensitive.png \
-    $$PWD/themes/dark/images/restore_hover.png \
-    $$PWD/themes/dark/images/restore_normal.png \
-    $$PWD/themes/dark/images/restore_press.png \
-    $$PWD/themes/dark/images/search.svg \
-    $$PWD/themes/dark/images/search_hover.png \
-    $$PWD/themes/dark/images/search_normal.png \
-    $$PWD/themes/dark/images/search_press.png \
-    $$PWD/themes/dark/images/show_password_hover.svg \
-    $$PWD/themes/dark/images/show_password_normal.svg \
-    $$PWD/themes/dark/images/show_password_press.svg \
-    $$PWD/themes/dark/images/slider_balance.png \
-    $$PWD/themes/dark/images/slider_bg.png \
-    $$PWD/themes/dark/images/slider_bg_active.png \
-    $$PWD/themes/dark/images/slider_handle.svg \
-    $$PWD/themes/dark/images/spinner_decrease.png \
-    $$PWD/themes/dark/images/spinner_decrease_hover.png \
-    $$PWD/themes/dark/images/spinner_decrease_normal.png \
-    $$PWD/themes/dark/images/spinner_decrease_press.png \
-    $$PWD/themes/dark/images/spinner_increase.png \
-    $$PWD/themes/dark/images/spinner_increase_hover.png \
-    $$PWD/themes/dark/images/spinner_increase_normal.png \
-    $$PWD/themes/dark/images/spinner_increase_press.png \
-    $$PWD/themes/dark/images/submit-clicked.svg \
-    $$PWD/themes/dark/images/submit-hover.svg \
-    $$PWD/themes/dark/images/submit-normal.svg \
-    $$PWD/themes/dark/images/tick_hover.png \
-    $$PWD/themes/dark/images/tick_insensitive.png \
-    $$PWD/themes/dark/images/tick_normal.png \
-    $$PWD/themes/dark/images/tick_transparent.png \
-    $$PWD/themes/dark/images/transparent_button_left_hover.png \
-    $$PWD/themes/dark/images/transparent_button_left_normal.png \
-    $$PWD/themes/dark/images/transparent_button_left_press.png \
-    $$PWD/themes/dark/images/transparent_button_middle_hover.png \
-    $$PWD/themes/dark/images/transparent_button_middle_normal.png \
-    $$PWD/themes/dark/images/transparent_button_middle_press.png \
-    $$PWD/themes/dark/images/transparent_button_right_hover.png \
-    $$PWD/themes/dark/images/transparent_button_right_normal.png \
-    $$PWD/themes/dark/images/transparent_button_right_press.png \
-    $$PWD/themes/dark/images/up_hover.png \
-    $$PWD/themes/dark/images/up_normal.png \
-    $$PWD/themes/dark/images/up_press.png \
-    $$PWD/themes/dark/images/window/close_disabled.svg \
-    $$PWD/themes/dark/images/window/close_hover.svg \
-    $$PWD/themes/dark/images/window/close_normal.svg \
-    $$PWD/themes/dark/images/window/close_press.svg \
-    $$PWD/themes/dark/images/window/fullscreen_hover.svg \
-    $$PWD/themes/dark/images/window/fullscreen_normal.svg \
-    $$PWD/themes/dark/images/window/fullscreen_press.svg \
-    $$PWD/themes/dark/images/window/maximize_disabled.svg \
-    $$PWD/themes/dark/images/window/maximize_hover.svg \
-    $$PWD/themes/dark/images/window/maximize_normal.svg \
-    $$PWD/themes/dark/images/window/maximize_press.svg \
-    $$PWD/themes/dark/images/window/menu_disabled.svg \
-    $$PWD/themes/dark/images/window/menu_hover.svg \
-    $$PWD/themes/dark/images/window/menu_normal.svg \
-    $$PWD/themes/dark/images/window/menu_press.svg \
-    $$PWD/themes/dark/images/window/minimize_disabled.svg \
-    $$PWD/themes/dark/images/window/minimize_hover.svg \
-    $$PWD/themes/dark/images/window/minimize_normal.svg \
-    $$PWD/themes/dark/images/window/minimize_press.svg \
-    $$PWD/themes/dark/images/window/quit_fullscreen_hover.svg \
-    $$PWD/themes/dark/images/window/quit_fullscreen_normal.svg \
-    $$PWD/themes/dark/images/window/quit_fullscreen_press.svg \
-    $$PWD/themes/dark/images/window/unmaximize_disabled.svg \
-    $$PWD/themes/dark/images/window/unmaximize_hover.svg \
-    $$PWD/themes/dark/images/window/unmaximize_normal.svg \
-    $$PWD/themes/dark/images/window/unmaximize_press.svg \
-    $$PWD/themes/light/Dtk--Widget--DAboutDialog.theme \
-    $$PWD/themes/light/Dtk--Widget--DAbstractDialog.theme \
-    $$PWD/themes/light/Dtk--Widget--DArrowButton.theme \
-    $$PWD/themes/light/Dtk--Widget--DBaseButton.theme \
-    $$PWD/themes/light/Dtk--Widget--DBaseExpand.theme \
-    $$PWD/themes/light/Dtk--Widget--DBaseLine.theme \
-    $$PWD/themes/light/Dtk--Widget--DBoxWidget.theme \
-    $$PWD/themes/light/Dtk--Widget--DButtonList.theme \
-    $$PWD/themes/light/Dtk--Widget--DDialog.theme \
-    $$PWD/themes/light/Dtk--Widget--DFileChooserEdit.theme \
-    $$PWD/themes/light/Dtk--Widget--DHeaderLine.theme \
-    $$PWD/themes/light/Dtk--Widget--DImageButton.theme \
-    $$PWD/themes/light/Dtk--Widget--DLabel.theme \
-    $$PWD/themes/light/Dtk--Widget--DLineEdit.theme \
-    $$PWD/themes/light/Dtk--Widget--DLinkButton.theme \
-    $$PWD/themes/light/Dtk--Widget--DLoadingIndicator.theme \
-    $$PWD/themes/light/Dtk--Widget--DPasswdEditAnimated.theme \
-    $$PWD/themes/light/Dtk--Widget--DPasswordEdit.theme \
-    $$PWD/themes/light/Dtk--Widget--DScrollArea.theme \
-    $$PWD/themes/light/Dtk--Widget--DScrollBar.theme \
-    $$PWD/themes/light/Dtk--Widget--DSearchEdit.theme \
-    $$PWD/themes/light/Dtk--Widget--DSegmentedControl.theme \
-    $$PWD/themes/light/Dtk--Widget--DSeparatorHorizontal.theme \
-    $$PWD/themes/light/Dtk--Widget--DSeparatorVertical.theme \
-    $$PWD/themes/light/Dtk--Widget--DSettingsDialog.theme \
-    $$PWD/themes/light/Dtk--Widget--DSlider.theme \
-    $$PWD/themes/light/Dtk--Widget--DSpinBox.theme \
-    $$PWD/themes/light/Dtk--Widget--DStackWidget.theme \
-    $$PWD/themes/light/Dtk--Widget--DSwitchButton.theme \
-    $$PWD/themes/light/Dtk--Widget--DTextButton.theme \
-    $$PWD/themes/light/Dtk--Widget--DTextEdit.theme \
-    $$PWD/themes/light/Dtk--Widget--DTitlebar.theme \
-    $$PWD/themes/light/Dtk--Widget--DToast.theme \
-    $$PWD/themes/light/Dtk--Widget--DWindow.theme \
-    $$PWD/themes/light/Dtk--Widget--DWindowCloseButton.theme \
-    $$PWD/themes/light/Dtk--Widget--DWindowMaxButton.theme \
-    $$PWD/themes/light/Dtk--Widget--DWindowMinButton.theme \
-    $$PWD/themes/light/Dtk--Widget--DWindowOptionButton.theme \
-    $$PWD/themes/light/Dtk--Widget--DWindowRestoreButton.theme \
-    $$PWD/themes/light/dialogs/images/check_focus.png \
-    $$PWD/themes/light/dialogs/images/light_check.png \
-    $$PWD/themes/light/dialogs/images/light_check_checked.png \
-    $$PWD/themes/light/dialogs/images/light_check_checked_hover.png \
-    $$PWD/themes/light/dialogs/images/light_close_small_hover.png \
-    $$PWD/themes/light/dialogs/images/light_close_small_normal.png \
-    $$PWD/themes/light/dialogs/images/light_close_small_press.png \
-    $$PWD/themes/light/dialogs/images/light_minimise_small_hover.png \
-    $$PWD/themes/light/dialogs/images/light_minimise_small_normal.png \
-    $$PWD/themes/light/dialogs/images/light_minimise_small_press.png \
-    $$PWD/themes/light/dialogs/images/user-trash-full.png \
-    $$PWD/themes/light/images/arrow_down_hover.png \
-    $$PWD/themes/light/images/arrow_down_hover.svg \
-    $$PWD/themes/light/images/arrow_down_insensitive.svg \
-    $$PWD/themes/light/images/arrow_down_normal.png \
-    $$PWD/themes/light/images/arrow_down_normal.svg \
-    $$PWD/themes/light/images/arrow_down_press.png \
-    $$PWD/themes/light/images/arrow_down_press.svg \
-    $$PWD/themes/light/images/arrow_left_hover.png \
-    $$PWD/themes/light/images/arrow_left_normal.png \
-    $$PWD/themes/light/images/arrow_left_press.png \
-    $$PWD/themes/light/images/arrow_right_hover.png \
-    $$PWD/themes/light/images/arrow_right_normal.png \
-    $$PWD/themes/light/images/arrow_right_press.png \
-    $$PWD/themes/light/images/arrow_up_hover.png \
-    $$PWD/themes/light/images/arrow_up_hover.svg \
-    $$PWD/themes/light/images/arrow_up_insensitive.svg \
-    $$PWD/themes/light/images/arrow_up_normal.png \
-    $$PWD/themes/light/images/arrow_up_normal.svg \
-    $$PWD/themes/light/images/arrow_up_press.png \
-    $$PWD/themes/light/images/arrow_up_press.svg \
-    $$PWD/themes/light/images/button_hover_bg.png \
-    $$PWD/themes/light/images/button_normal_bg.png \
-    $$PWD/themes/light/images/button_press_bg.png \
-    $$PWD/themes/light/images/capslock-clicked.svg \
-    $$PWD/themes/light/images/capslock-hover.svg \
-    $$PWD/themes/light/images/capslock-normal.svg \
-    $$PWD/themes/light/images/checkbox_checked.png \
-    $$PWD/themes/light/images/checkbox_checked_hover.png \
-    $$PWD/themes/light/images/checkbox_checked_insensitive.png \
-    $$PWD/themes/light/images/checkbox_unchecked.png \
-    $$PWD/themes/light/images/checkbox_unchecked_hover.png \
-    $$PWD/themes/light/images/checkbox_unchecked_insensitive.png \
-    $$PWD/themes/light/images/combobox_arrow.png \
-    $$PWD/themes/light/images/combobox_arrow_active.png \
-    $$PWD/themes/light/images/delete_multi_hover.png \
-    $$PWD/themes/light/images/delete_multi_normal.png \
-    $$PWD/themes/light/images/delete_multi_press.png \
-    $$PWD/themes/light/images/hide_password_hover.svg \
-    $$PWD/themes/light/images/hide_password_normal.svg \
-    $$PWD/themes/light/images/hide_password_press.svg \
-    $$PWD/themes/light/images/input_clear_hover.svg \
-    $$PWD/themes/light/images/input_clear_normal.svg \
-    $$PWD/themes/light/images/input_clear_press.svg \
-    $$PWD/themes/light/images/keyboard-clicked.svg \
-    $$PWD/themes/light/images/keyboard-hover.svg \
-    $$PWD/themes/light/images/keyboard-normal.svg \
-    $$PWD/themes/light/images/loadfile_hover.svg \
-    $$PWD/themes/light/images/loadfile_normal.svg \
-    $$PWD/themes/light/images/loadfile_press.svg \
-    $$PWD/themes/light/images/multiselect_active_normal.png \
-    $$PWD/themes/light/images/multiselect_inactive_hover.png \
-    $$PWD/themes/light/images/multiselect_inactive_normal.png \
-    $$PWD/themes/light/images/pw-visible-clicked.svg \
-    $$PWD/themes/light/images/pw-visible-hover.svg \
-    $$PWD/themes/light/images/pw-visible-normal.svg \
-    $$PWD/themes/light/images/radio_selected.png \
-    $$PWD/themes/light/images/radio_selected_hover.png \
-    $$PWD/themes/light/images/radio_selected_insensitive.png \
-    $$PWD/themes/light/images/radio_unselected.png \
-    $$PWD/themes/light/images/radio_unselected_hover.png \
-    $$PWD/themes/light/images/radio_unselected_insensitive.png \
-    $$PWD/themes/light/images/restore_hover.png \
-    $$PWD/themes/light/images/restore_normal.png \
-    $$PWD/themes/light/images/restore_press.png \
-    $$PWD/themes/light/images/search.svg \
-    $$PWD/themes/light/images/search_hover.png \
-    $$PWD/themes/light/images/search_normal.png \
-    $$PWD/themes/light/images/search_press.png \
-    $$PWD/themes/light/images/show_password_hover.svg \
-    $$PWD/themes/light/images/show_password_normal.svg \
-    $$PWD/themes/light/images/show_password_press.svg \
-    $$PWD/themes/light/images/slider_bg.png \
-    $$PWD/themes/light/images/slider_bg_active.png \
-    $$PWD/themes/light/images/slider_round.png \
-    $$PWD/themes/light/images/slider_sharp.png \
-    $$PWD/themes/light/images/spinner_decrease_hover.png \
-    $$PWD/themes/light/images/spinner_decrease_normal.png \
-    $$PWD/themes/light/images/spinner_decrease_press.png \
-    $$PWD/themes/light/images/spinner_increase_hover.png \
-    $$PWD/themes/light/images/spinner_increase_normal.png \
-    $$PWD/themes/light/images/spinner_increase_press.png \
-    $$PWD/themes/light/images/submit-clicked.svg \
-    $$PWD/themes/light/images/submit-hover.svg \
-    $$PWD/themes/light/images/submit-normal.svg \
-    $$PWD/themes/light/images/tick_hover.png \
-    $$PWD/themes/light/images/tick_insensitive.png \
-    $$PWD/themes/light/images/tick_normal.png \
-    $$PWD/themes/light/images/water_back.svg \
-    $$PWD/themes/light/images/water_front.svg \
-    $$PWD/themes/light/images/window/close_disabled.svg \
-    $$PWD/themes/light/images/window/close_hover.svg \
-    $$PWD/themes/light/images/window/close_normal.svg \
-    $$PWD/themes/light/images/window/close_press.svg \
-    $$PWD/themes/light/images/window/fullscreen_hover.svg \
-    $$PWD/themes/light/images/window/fullscreen_normal.svg \
-    $$PWD/themes/light/images/window/fullscreen_press.svg \
-    $$PWD/themes/light/images/window/maximize_disabled.svg \
-    $$PWD/themes/light/images/window/maximize_hover.svg \
-    $$PWD/themes/light/images/window/maximize_normal.svg \
-    $$PWD/themes/light/images/window/maximize_press.svg \
-    $$PWD/themes/light/images/window/menu_disabled.svg \
-    $$PWD/themes/light/images/window/menu_hover.svg \
-    $$PWD/themes/light/images/window/menu_normal.svg \
-    $$PWD/themes/light/images/window/menu_press.svg \
-    $$PWD/themes/light/images/window/minimize_disabled.svg \
-    $$PWD/themes/light/images/window/minimize_hover.svg \
-    $$PWD/themes/light/images/window/minimize_normal.svg \
-    $$PWD/themes/light/images/window/minimize_press.svg \
-    $$PWD/themes/light/images/window/quit_fullscreen_hover.svg \
-    $$PWD/themes/light/images/window/quit_fullscreen_normal.svg \
-    $$PWD/themes/light/images/window/quit_fullscreen_press.svg \
-    $$PWD/themes/light/images/window/unmaximize_disabled.svg \
-    $$PWD/themes/light/images/window/unmaximize_hover.svg \
-    $$PWD/themes/light/images/window/unmaximize_normal.svg \
-    $$PWD/themes/light/images/window/unmaximize_press.svg
+    $$PWD/DApplicationHelper
