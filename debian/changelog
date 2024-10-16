@@ -1,4 +1,4 @@
-dtkwidget2 (15.14-2.2.5.9) UNRELEASED; urgency=medium
+dtkwidget2 (15.14-2.2.5.8-1) UNRELEASED; urgency=medium
 
   * 修复大部分 dtk2 应用退出时异常崩溃的问题
   * 修复在 dtk2 中开启 dtk5 应用时样式错误的问题
