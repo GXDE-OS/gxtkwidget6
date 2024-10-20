@@ -49,6 +49,7 @@ HEADERS += $$PWD/dslider.h\
     $$PWD/dguiapplicationhelper.h \
     $$PWD/dmessagebox.h \
     $$PWD/dpalette.h \
+    $$PWD/dinputdialog_p.h \
     $$PWD/dplatformtheme.h \
     $$PWD/dthememanager.h \
     $$PWD/dapplication.h \
@@ -121,6 +122,7 @@ HEADERS += $$PWD/dslider.h\
     $$PWD/danchors.h \
     $$PWD/dwindowgroupleader.h \
     $$PWD/dborderlesswidget.h \
+    $$PWD/dcommandlinkbutton.h \
     $$PWD/dborderlesswindow.h
 
 SOURCES += $$PWD/dslider.cpp \
@@ -199,6 +201,7 @@ SOURCES += $$PWD/dslider.cpp \
     $$PWD/danchors.cpp \
     $$PWD/dwindowgroupleader.cpp \
     $$PWD/dborderlesswidget.cpp \
+    $$PWD/dcommandlinkbutton.cpp \
     $$PWD/dborderlesswindow.cpp
 
 RESOURCES += \
@@ -222,6 +225,11 @@ includes.files += \
     $$PWD/DDialog \
     $$PWD/DImageButton \
     $$PWD/DLabel \
+    $$PWD/DAction \
+    $$PWD/DAnchorsBase \
+    $$PWD/DBorderlessWindow \
+    $$PWD/DCommandLinkButton \
+    $$PWD/DMenu \
     $$PWD/DTitlebar \
     $$PWD/DWindow \
     $$PWD/DMainWindow \
