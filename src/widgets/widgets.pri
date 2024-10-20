@@ -47,6 +47,7 @@ HEADERS += $$PWD/dslider.h\
     $$PWD/dcheckbox.h \
     $$PWD/ddialog.h \
     $$PWD/dguiapplicationhelper.h \
+    $$PWD/dmessagebox.h \
     $$PWD/dpalette.h \
     $$PWD/dplatformtheme.h \
     $$PWD/dthememanager.h \
@@ -127,6 +128,7 @@ SOURCES += $$PWD/dslider.cpp \
     $$PWD/dcheckbox.cpp \
     $$PWD/ddialog.cpp \
     $$PWD/dguiapplicationhelper.cpp \
+    $$PWD/dmessagebox.cpp \
     $$PWD/dpalette.cpp \
     $$PWD/dplatformtheme.cpp \
     $$PWD/dthememanager.cpp \
@@ -147,7 +149,6 @@ SOURCES += $$PWD/dslider.cpp \
     $$PWD/dswitchbutton.cpp\
     $$PWD/dsegmentedcontrol.cpp \
     $$PWD/dlineedit.cpp \
-    $$PWD/dwidget.cpp \
     $$PWD/dwindowmaxbutton.cpp \
     $$PWD/dwindowminbutton.cpp \
     $$PWD/dwindowclosebutton.cpp \
@@ -186,7 +187,6 @@ SOURCES += $$PWD/dslider.cpp \
     $$PWD/dclipeffectwidget.cpp \
     $$PWD/dgraphicsclipeffect.cpp \
     $$PWD/dforeignwindow.cpp \
-    $$PWD/dpushbutton.cpp \
     $$PWD/dtickeffect.cpp \
     $$PWD/dwaterprogress.cpp \
     $$PWD/dsettingswidgetfactory.cpp \
@@ -257,4 +257,5 @@ includes.files += \
     $$PWD/DAnchors \
     $$PWD/DSegmentedControl \
     $$PWD/DSegmentedHighlight \
-    $$PWD/DApplicationHelper
+    $$PWD/DApplicationHelper \
+    $$PWD/DMessageBox

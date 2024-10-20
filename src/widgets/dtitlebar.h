@@ -20,6 +20,7 @@
 
 #include <QFrame>
 #include <QMenu>
+#include <QHBoxLayout>
 
 #include <dobject.h>
 #include "dtkwidget_global.h"
@@ -42,6 +43,7 @@ public:
     QWidget *customWidget() const;
     void setCustomWidget(QWidget *, bool fixCenterPos = false);
     void setCustomWidget(QWidget *, Qt::AlignmentFlag flag = Qt::AlignCenter, bool fixCenterPos = false);
+    void addWidget(QWidget *w, Qt::AlignmentFlag flag = Qt::AlignCenter);
 
     int buttonAreaWidth() const;
     bool separatorVisible() const;
@@ -106,6 +108,7 @@ private:
     D_PRIVATE_SLOT(void _q_onTopWindowMotifHintsChanged(quint32))
 
     DMainWindow *m_dwindow = NULL;
+    QHBoxLayout *m_titilebarWidgetLayout;
 
 #ifndef QT_NO_MENU
     D_PRIVATE_SLOT(void _q_addDefaultMenuItems())

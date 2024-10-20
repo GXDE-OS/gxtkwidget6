@@ -3,11 +3,15 @@
 
 #include <QObject>
 #include <QWidget>
+#include "dtkwidget_global.h"
+
+DWIDGET_BEGIN_NAMESPACE
 
 class DWidget : public QWidget
 {
-public:
-    DWidget();
+
 };
+
+DWIDGET_END_NAMESPACE
 
 #endif // DWIDGET_H

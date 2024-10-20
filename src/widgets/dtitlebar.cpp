@@ -769,6 +769,15 @@ void DTitlebar::setCustomWidget(QWidget *w, bool fixCenterPos)
     setCustomWidget(w, Qt::AlignCenter, fixCenterPos);
 }
 
+void DTitlebar::addWidget(QWidget *w, Qt::AlignmentFlag wflag)
+{
+    // 如果对象还没有 new 则 new 一个
+    if (!m_titilebarWidgetLayout) {
+        m_titilebarWidgetLayout = new QHBoxLayout();
+    }
+    m_titilebarWidgetLayout->addWidget(w, wflag);
+}
+
 /*!
  * \~english @brief DTitlebar::setCustomWidget sets a customized widget to be used as the
  * central content of the title bar.
@@ -793,23 +802,23 @@ void DTitlebar::setCustomWidget(QWidget *w, Qt::AlignmentFlag wflag, bool fixCen
 
     QSize old = d->buttonArea->size();
 
-    QHBoxLayout *l = new QHBoxLayout;
-    l->setSpacing(0);
-    l->setMargin(0);
+    m_titilebarWidgetLayout = new QHBoxLayout;
+    m_titilebarWidgetLayout->setSpacing(0);
+    m_titilebarWidgetLayout->setMargin(0);
 
     if (fixCenterPos) {
         d->titlePadding = new QWidget;
         d->titlePadding->setFixedSize(old);
-        l->addWidget(d->titlePadding);
+        m_titilebarWidgetLayout->addWidget(d->titlePadding);
     }
 
-    l->addWidget(w, 0, wflag);
+    m_titilebarWidgetLayout->addWidget(w, 0, wflag);
     qDeleteAll(d->coustomAtea->children());
     d->titleLabel = Q_NULLPTR;
     d->titleArea = Q_NULLPTR;
     d->iconLabel = Q_NULLPTR;
     d->titlePadding = Q_NULLPTR;
-    d->coustomAtea->setLayout(l);
+    d->coustomAtea->setLayout(m_titilebarWidgetLayout);
     d->buttonArea->resize(old);
     d->customWidget = w;
 
