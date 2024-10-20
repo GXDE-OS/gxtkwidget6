@@ -7,10 +7,8 @@
 
 DWIDGET_BEGIN_NAMESPACE
 
-class DWidget : public QWidget
-{
-
-};
+using GWidget = QWidget;
+using DWidget = QWidget;
 
 DWIDGET_END_NAMESPACE
 

@@ -8,10 +8,8 @@
 
 DWIDGET_BEGIN_NAMESPACE
 
-class DPushButton : public QPushButton
-{
-public:
-};
+using DPushButton = QPushButton;
+using GPushButton = QPushButton;
 
 DWIDGET_END_NAMESPACE
 

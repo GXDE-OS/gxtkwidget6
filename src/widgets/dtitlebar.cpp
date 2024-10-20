@@ -769,11 +769,19 @@ void DTitlebar::setCustomWidget(QWidget *w, bool fixCenterPos)
     setCustomWidget(w, Qt::AlignCenter, fixCenterPos);
 }
 
+void DTitlebar::setCustomLayout(QLayout *layout, bool fixCenterPos)
+{
+    QWidget *widget = new QWidget();
+    widget->setLayout(layout);
+    this->setCustomWidget(widget, fixCenterPos);
+}
+
 void DTitlebar::addWidget(QWidget *w, Qt::AlignmentFlag wflag)
 {
     // 如果对象还没有 new 则 new 一个
     if (!m_titilebarWidgetLayout) {
         m_titilebarWidgetLayout = new QHBoxLayout();
+        setCustomLayout(m_titilebarWidgetLayout);
     }
     m_titilebarWidgetLayout->addWidget(w, wflag);
 }

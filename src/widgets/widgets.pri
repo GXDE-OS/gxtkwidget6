@@ -44,6 +44,7 @@ isEmpty(DTK_NO_MULTIMEDIA){
 
 HEADERS += $$PWD/dslider.h\
     $$PWD/dapplicationhelper.h \
+    $$PWD/dapplicationsettings.h \
     $$PWD/dcheckbox.h \
     $$PWD/ddialog.h \
     $$PWD/dguiapplicationhelper.h \
@@ -123,10 +124,12 @@ HEADERS += $$PWD/dslider.h\
     $$PWD/dwindowgroupleader.h \
     $$PWD/dborderlesswidget.h \
     $$PWD/dcommandlinkbutton.h \
-    $$PWD/dborderlesswindow.h
+    $$PWD/dborderlesswindow.h \
+    $$PWD/dprogressbar.h
 
 SOURCES += $$PWD/dslider.cpp \
     $$PWD/dapplicationhelper.cpp \
+    $$PWD/dapplicationsettings.cpp \
     $$PWD/dcheckbox.cpp \
     $$PWD/ddialog.cpp \
     $$PWD/dguiapplicationhelper.cpp \
@@ -266,4 +269,7 @@ includes.files += \
     $$PWD/DSegmentedControl \
     $$PWD/DSegmentedHighlight \
     $$PWD/DApplicationHelper \
-    $$PWD/DMessageBox
+    $$PWD/DMessageBox \
+    $$PWD/DToolButton \
+    $$PWD/DProgressBar \
+    $$PWD/DApplicationSettings

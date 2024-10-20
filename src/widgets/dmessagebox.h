@@ -7,10 +7,10 @@
 #include "dtkwidget_global.h"
 
 DWIDGET_BEGIN_NAMESPACE
-class DMessageBox: public QMessageBox
-{
 
-};
+using GMessageBox = QMessageBox;
+using DMessageBox = QMessageBox;
+
 DWIDGET_END_NAMESPACE
 
 #endif // DMESSAGEBOX_H

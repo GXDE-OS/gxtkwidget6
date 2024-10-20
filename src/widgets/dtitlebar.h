@@ -43,6 +43,7 @@ public:
     QWidget *customWidget() const;
     void setCustomWidget(QWidget *, bool fixCenterPos = false);
     void setCustomWidget(QWidget *, Qt::AlignmentFlag flag = Qt::AlignCenter, bool fixCenterPos = false);
+    void setCustomLayout(QLayout *, bool fixCenterPos = false);
     void addWidget(QWidget *w, Qt::AlignmentFlag flag = Qt::AlignCenter);
 
     int buttonAreaWidth() const;
@@ -117,6 +118,8 @@ private:
     D_PRIVATE_SLOT(void _q_quitActionTriggered())
 #endif
 };
+
+using GTitlebar = DTitlebar;
 
 DWIDGET_END_NAMESPACE
 
