@@ -247,7 +247,6 @@ DBorderlessWidget::DBorderlessWidget(DBorderlessWidgetPrivate &dd, QWidget *pare
 {
     D_D(DBorderlessWidget);
     d->init();
-    qDebug() << "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB";
     QWidget::setMouseTracking(true);
 
     QWidget::setAttribute(Qt::WA_TranslucentBackground, true);
