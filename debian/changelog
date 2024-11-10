@@ -1,4 +1,4 @@
-dtkwidget2 (15.14-2.2.5.9) UNRELEASED; urgency=medium
+dtkwidget2 (15.14.1-2.2.6.0) UNRELEASED; urgency=medium
 
   * 修复大部分 dtk2 应用退出时异常崩溃的问题
   * 修复在 dtk2 中开启 dtk5 应用时样式错误的问题
@@ -6,7 +6,7 @@ dtkwidget2 (15.14-2.2.5.9) UNRELEASED; urgency=medium
   * 添加 DCommandLinkButton
   * 修复对话框无法拖动的问题
 
- -- gfdgd_xi <3025613752@qq.com>  Sat, 02 Nov 2024 15:28:18 +0800
+ -- gfdgd_xi <3025613752@qq.com>  Sun, 10 Nov 2024 10:04:30 +0800
 
 dtkwidget2 (15.11~2.2.1+rebuild-1) unstable; urgency=medium
 
