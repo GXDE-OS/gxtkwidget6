@@ -412,7 +412,7 @@ void DAbstractDialog::mouseMoveEvent(QMouseEvent *event)
     D_D(DAbstractDialog);
 
     if (d->handle) {
-	d->handle->setEnableSystemMove(true);
+	    d->handle->setEnableSystemMove(true);
         //return QDialog::mouseMoveEvent(event);
     }
 
