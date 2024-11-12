@@ -1,5 +1,5 @@
-name: Building Program
-run-name: Building ${{ GITHUB.REPOSITORY }}
+name: Auto Building Program
+run-name: Auto Building ${{ GITHUB.REPOSITORY }}
 
 on:
   workflow_dispatch:
