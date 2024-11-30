@@ -86,6 +86,9 @@ public:
 
     void setMaskPath(const QPainterPath &path);
 
+    void setWindowFlags(Qt::WindowFlags type);
+    //void setWindowFlag();
+
 public Q_SLOTS:
     void setRadius(int radius);
     void setMode(BlurMode mode);
