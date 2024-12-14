@@ -14,7 +14,7 @@ greaterThan(QT_MAJOR_VERSION, 4) {
 }
 
 linux* {
-    QT += x11extras dbus
+    QT += dbus
 
     ###(zccrs): use load(dtk_qmake), dtkcore > 2.0.9
     ARCH = $$QMAKE_HOST.arch
@@ -53,12 +53,12 @@ includes.files += \
 include($$PWD/util/util.pri)
 include($$PWD/widgets/widgets.pri)
 
-linux* {
-    includes.files += $$PWD/platforms/linux/*.h
-}
-win32* {
+#linux* {
+#    includes.files += $$PWD/platforms/linux/*.h
+#}
+#win32* {
     includes.files += $$PWD/platforms/windows/*.h
-}
+#}
 
 # create DtkWidgets file
 defineTest(containIncludeFiles) {

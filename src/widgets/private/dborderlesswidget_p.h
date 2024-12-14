@@ -20,7 +20,7 @@
 
 #include <DObjectPrivate>
 #include "dborderlesswidget.h"
-#include "../../platforms/x11/xutil.h"
+//#include "../../platforms/x11/xutil.h"
 
 class QVBoxLayout;
 
@@ -68,7 +68,7 @@ public:
     DTitlebar           *titlebar       = nullptr;
     QWidget             *contentWidget  = nullptr;
 
-    XUtils::CornerEdge resizingCornerEdge = XUtils::CornerEdge::kInvalid;
+    //XUtils::CornerEdge resizingCornerEdge = XUtils::CornerEdge::kInvalid;
 };
 
 

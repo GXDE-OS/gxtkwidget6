@@ -30,8 +30,8 @@ class LIBDTKWIDGETSHARED_EXPORT DLabel : public QLabel
     Q_OBJECT
 
 public:
-    DLabel(QWidget * parent = 0, Qt::WindowFlags f = 0);
-    DLabel(const QString & text, QWidget * parent = 0, Qt::WindowFlags f = 0);
+    DLabel(QWidget * parent = 0, Qt::WindowFlags f = Qt::WindowFlags(0));
+    DLabel(const QString & text, QWidget * parent = 0, Qt::WindowFlags f = Qt::WindowFlags(0));
 };
 
 DWIDGET_END_NAMESPACE

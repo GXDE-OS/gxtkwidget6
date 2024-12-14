@@ -40,12 +40,22 @@ ButtonGroup::ButtonGroup(QWidget *parent) :
     d->group = new QButtonGroup;
     d->layout = new QHBoxLayout(this);
     d->layout->setSpacing(0);
-    d->layout->setMargin(0);
-
-    connect(d->group,static_cast<void (QButtonGroup::*)(int)>(&QButtonGroup::buttonReleased),
+    d->layout->setContentsMargins(0, 0, 0, 0);
+    connect(d->group, &QButtonGroup::buttonReleased,
+            this, [=](QAbstractButton* button){
+        // 获取被释放按钮的 ID（假设 QButtonGroup 有一个 checkedId() 方法来获取当前选中的按钮 ID，
+        // 但注意 buttonReleased 信号是在按钮被释放时发射的，不一定表示该按钮是被选中的。
+        // 如果你需要的是被选中按钮的 ID，可能需要使用其他信号，如 buttonClicked。
+        // 这里我们假设你需要的是释放按钮的某种属性或 ID，这可能需要你自定义逻辑来获取。
+        // 例如，如果每个按钮都有一个唯一的对象名称，你可以使用 button->objectName() 来获取它。
+        int buttonId = d->group->checkedId()/* 这里应该是获取按钮 ID 的逻辑 */;
+        // 发射自定义信号，传递所需的 ID
+        Q_EMIT buttonChecked(buttonId);
+    });
+    /*connect(d->group,static_cast<void (QButtonGroup::*)(int)>(&QButtonGroup::buttonReleased),
             this, [=](int){
         Q_EMIT buttonChecked(d->group->checkedId());
-    });
+    });*/
 }
 
 ButtonGroup::~ButtonGroup()

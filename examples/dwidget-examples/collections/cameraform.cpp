@@ -19,12 +19,15 @@
 #include "ui_cameraform.h"
 
 #include <QCamera>
-#include <QCameraInfo>
-#include <QCameraViewfinder>
+//#include <QCameraInfo>
+//#include <QCameraViewfinder>
+#include <QCamera>
 #include <QMediaRecorder>
 #include <QMediaMetaData>
-#include <QVideoProbe>
-#include <QCameraImageCapture>
+//#include <QVideoProbe>
+#include <QVideoSink>
+//#include <QCameraImageCapture>
+#include <QCameraFormat>
 #include <QDebug>
 
 CameraForm::CameraForm(QWidget *parent) :
@@ -33,7 +36,7 @@ CameraForm::CameraForm(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    camera = new QCamera(QCameraInfo::defaultCamera(), this);
+    camera = new QCamera(/*QCameraInfo::defaultCamera(), */this);
     viewfinder = new DVideoWidget(ui->widget);
     viewfinder->resize(150,150);
     viewfinder->setAspectRatioMode(Qt::KeepAspectRatioByExpanding);
@@ -70,11 +73,11 @@ void CameraForm::on_pushButton_3_clicked()
 
 void CameraForm::on_pushButton_4_clicked()
 {
-    if(camera->status() == QCamera::ActiveStatus) {
+    /*if(camera->status() == QCamera::ActiveStatus) {
         camera->stop();
         ui->pushButton_4->setText("start");
     } else {
         camera->start();
         ui->pushButton_4->setText("stop");
-    }
+    }*/
 }

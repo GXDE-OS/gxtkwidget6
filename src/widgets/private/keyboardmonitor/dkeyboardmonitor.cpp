@@ -25,7 +25,11 @@
 
 #include "dkeyboardmonitor.h"
 
-#include <QX11Info>
+// Qt6 QX11Info 已废弃
+// 参考 https://doc.qt.io/qt-6/extras-changes-qt6.html
+#include <qnativeinterface.h>
+#include <QGuiApplication>
+#include <qguiapplication_platform.h>
 #include <QDebug>
 
 #include <X11/X.h>
@@ -174,36 +178,40 @@ bool DKeyboardMonitor::isCapslockOn()
     if (qgetenv("XDG_SESSION_TYPE") == "wayland" && qgetenv("DTK2_XWAYLAND") == "") {
         return false;
     }
-    bool result;
+    return false;
+    /*bool result;
     unsigned int n = 0;
+
     static Display* d = QX11Info::display();
 
     XkbGetIndicatorState(d, XkbUseCoreKbd, &n);
     result = (n & 0x01) != 0;
 
-    return result;
+    return result;*/
 }
 
 bool DKeyboardMonitor::isNumlockOn()
 {
-    bool result;
+    return false;
+    /*bool result;
     unsigned int n = 0;
     static Display* d = QX11Info::display();
 
     XkbGetIndicatorState(d, XkbUseCoreKbd, &n);
     result = (n & 0x02) != 0;
 
-    return result;
+    return result;*/
 }
 
 bool DKeyboardMonitor::setNumlockStatus(const bool &on)
 {
-    Display* d = QX11Info::display();
+    return false;
+    /*Display* d = QX11Info::display();
 
     bool result = XkbLockModifiers(d, XkbUseCoreKbd, Mod2Mask, on ? Mod2Mask : 0);
     XFlush(d);
 
-    return result;
+    return result;*/
 }
 
 void DKeyboardMonitor::run()

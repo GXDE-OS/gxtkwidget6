@@ -31,6 +31,7 @@
 #include <QApplication>
 #include <QImageReader>
 #include <QSettings>
+#include <QFile>
 
 #ifdef Q_OS_UNIX
 #include <unistd.h>
@@ -351,7 +352,8 @@ const QPixmap *DAboutDialog::companyLogo() const
 {
     D_DC(DAboutDialog);
 
-    return d->companyLogoLabel->pixmap();
+    static QPixmap pixmap = d->companyLogoLabel->pixmap();
+    return &pixmap;
 }
 
 /*!

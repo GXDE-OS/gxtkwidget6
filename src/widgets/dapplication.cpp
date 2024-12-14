@@ -134,7 +134,7 @@ static bool tryAcquireSystemSemaphore(QSystemSemaphore *ss, qint64 timeout = 10)
     _tmp_ss.acquire();
 
     QElapsedTimer t;
-    QFuture<bool> request = QtConcurrent::run(ss, &QSystemSemaphore::acquire);
+    /*QFuture<bool> request = QtConcurrent::run(ss, &QSystemSemaphore::acquire);
 
     t.start();
 
@@ -150,6 +150,7 @@ static bool tryAcquireSystemSemaphore(QSystemSemaphore *ss, qint64 timeout = 10)
         }
     }
 
+    return false;*/
     return false;
 }
 
@@ -273,7 +274,7 @@ bool DApplicationPrivate::loadTranslator(QList<DPathBuf> translateDirs, const QS
             }
         }
 
-        QStringList parseLocalNameList = locale.name().split("_", QString::SkipEmptyParts);
+        QStringList parseLocalNameList = locale.name().split("_", Qt::SkipEmptyParts);
         if (parseLocalNameList.length() > 0) {
             translateFilename = QString("%1_%2").arg(name)
                                 .arg(parseLocalNameList.at(0));
@@ -398,7 +399,7 @@ DApplication::DApplication(int &argc, char **argv) :
         setAttribute(Qt::AA_ForceRasterWidgets);
     }
 
-#ifdef Q_OS_LINUX
+/*#ifdef Q_OS_LINUX
     // set qpixmap cache limit
     if (QGSettings::isSchemaInstalled("com.deepin.dde.dapplication"))
     {
@@ -426,7 +427,7 @@ DApplication::DApplication(int &argc, char **argv) :
             // This workaround hopefully can fix most of this situations.
             QTapAndHoldGesture::setTimeout(gsettings.get("longpress-duration").toInt() - 100);
     }
-#endif
+#endif*/
 }
 
 
@@ -604,7 +605,7 @@ bool DApplication::loadDXcbPlugin()
     //  而非 gxde-qt5integration
     qputenv("QT_STYLE_OVERRIDE_BAK_c80071c7-853e-4a3f-a27d-4145ae662bb9",
             qgetenv("QT_STYLE_OVERRIDE"));  // 通过设置 QT_STYLE_OVERRIDE_BAK 来备份原来的设置
-    qputenv("QT_STYLE_OVERRIDE", "dlight");
+    //qputenv("QT_STYLE_OVERRIDE", "dlight");
 
     Q_ASSERT_X(!qApp, "DApplication::loadDxcbPlugin", "Must call before QGuiApplication defined object");
 

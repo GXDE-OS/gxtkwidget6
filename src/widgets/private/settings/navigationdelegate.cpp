@@ -46,9 +46,10 @@ void NavigationDelegate::paint(QPainter *painter, const QStyleOptionViewItem &op
                                const QModelIndex &index) const
 {
     painter->save();
-    painter->setRenderHints(QPainter::Antialiasing | QPainter::HighQualityAntialiasing);
+    painter->setRenderHints(QPainter::Antialiasing);
 
-    painter->setBrush(option.palette.foreground());
+    //painter->setBrush(option.palette.foreground());
+    painter->setBrush(option.palette.color(QPalette::ButtonText));
 
     auto level = static_cast<NavLevel>(index.data(NavLevelRole).toInt());
 

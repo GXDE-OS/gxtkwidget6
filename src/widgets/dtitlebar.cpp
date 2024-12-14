@@ -32,9 +32,9 @@
 #include "dwindowoptionbutton.h"
 #include "dlabel.h"
 #include "dplatformwindowhandle.h"
-#ifdef Q_OS_LINUX
+/*#ifdef Q_OS_LINUX
 #include "../platforms/x11/xutil.h"
-#endif
+#endif*/
 #include "daboutdialog.h"
 #include "dapplication.h"
 #include "private/dapplication_p.h"
@@ -166,7 +166,7 @@ void DTitlebarPrivate::init()
 
     QHBoxLayout *buttonAreaLayout = new QHBoxLayout;
     buttonAreaLayout->setContentsMargins(0, 0, 0, 0);
-    buttonAreaLayout->setMargin(0);
+    buttonAreaLayout->setContentsMargins(0, 0, 0, 0);
     buttonAreaLayout->setSpacing(0);
     buttonAreaLayout->addWidget(optionButton);
     buttonAreaLayout->addWidget(minButton);
@@ -192,7 +192,7 @@ void DTitlebarPrivate::init()
     titleArea->setWindowFlags(Qt::WindowTransparentForInput);
 
     QHBoxLayout *coustomAteaLayout = new QHBoxLayout;
-    coustomAteaLayout->setMargin(0);
+    coustomAteaLayout->setContentsMargins(0, 0, 0, 0);
     coustomAteaLayout->setSpacing(0);
     coustomAteaLayout->addWidget(titleArea);
     coustomAtea->setLayout(coustomAteaLayout);
@@ -812,7 +812,7 @@ void DTitlebar::setCustomWidget(QWidget *w, Qt::AlignmentFlag wflag, bool fixCen
 
     m_titilebarWidgetLayout = new QHBoxLayout;
     m_titilebarWidgetLayout->setSpacing(0);
-    m_titilebarWidgetLayout->setMargin(0);
+    m_titilebarWidgetLayout->setContentsMargins(0, 0, 0, 0);
 
     if (fixCenterPos) {
         d->titlePadding = new QWidget;

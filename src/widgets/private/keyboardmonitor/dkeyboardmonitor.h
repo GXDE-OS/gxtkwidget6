@@ -27,8 +27,12 @@
 #define KEYBOARDMONITOR_H
 
 #include <QThread>
-#include <QX11Info>
-#include <dtkwidget_global.h>
+//#include <QX11Info>
+// Qt6 QX11Info 已废弃
+// 参考 https://doc.qt.io/qt-6/extras-changes-qt6.html
+#include <qnativeinterface.h>
+#include "dtkwidget_global.h"
+#include <QGuiApplication>
 
 DWIDGET_BEGIN_NAMESPACE
 

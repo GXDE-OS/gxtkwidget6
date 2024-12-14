@@ -22,7 +22,10 @@
 #include <QPainterPath>
 #include <QTextLayout>
 #include <QApplication>
-#include <QDesktopWidget>
+//#include <QDesktopWidget>
+// Qt6 使用 QScreen
+#include <QScreen>
+#include <QWidget>
 
 QT_BEGIN_NAMESPACE
 //extern Q_WIDGETS_EXPORT void qt_blurImage(QImage &blurImage, qreal radius, bool quality, int transposed = 0);
@@ -72,8 +75,9 @@ void moveToCenter(QWidget *w)
 {
     Q_ASSERT(w != nullptr);
 
-    QDesktopWidget *dw = QApplication::desktop();
-    QRect parentRect = dw->availableGeometry(dw->primaryScreen());
+    QScreen *dw = QApplication::primaryScreen();
+    //QDesktopWidget *dw = QApplication::desktop();
+    QRect parentRect = dw->availableGeometry();
 
     if (w->parentWidget()) {
         parentRect = w->parentWidget()->geometry();

@@ -16,7 +16,7 @@
  */
 
 #include <QtWidgets>
-#include <QX11Info>
+//#include <QX11Info>
 
 #include <libsn/sn-monitor.h>
 #include <xcb/xcb_aux.h>
@@ -25,7 +25,11 @@
 
 class StartupNotificationMonitorSub : public StartupNotificationMonitor
 {
-
+    // 必须实现纯虚函数 nativeEventFilter
+        bool nativeEventFilter(const QByteArray &eventType, void *message, qintptr *result) override {
+            // 实现事件过滤逻辑...
+            return false; // 或者根据逻辑返回 true
+        }
 };
 
 Q_GLOBAL_STATIC(StartupNotificationMonitorSub, StartupNotificationMonitorInstance)
@@ -80,7 +84,7 @@ StartupNotificationMonitor::StartupNotificationMonitor() :
 {
     int screen = 0;
 
-    xcb_screen_t *s = xcb_aux_get_screen (QX11Info::connection(), screen);
+    /*xcb_screen_t *s = xcb_aux_get_screen (QX11Info::connection(), screen);
     const uint32_t select_input_val[] = { XCB_EVENT_MASK_PROPERTY_CHANGE };
     xcb_change_window_attributes (QX11Info::connection(), s->root, XCB_CW_EVENT_MASK,
                                   select_input_val);
@@ -89,7 +93,7 @@ StartupNotificationMonitor::StartupNotificationMonitor() :
 
     context = sn_monitor_context_new (display, screen,
                                       monitor_event_func,
-                                      this, NULL);
+                                      this, NULL);*/
 
     qApp->installNativeEventFilter(this);
 }

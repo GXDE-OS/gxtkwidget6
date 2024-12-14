@@ -16,17 +16,17 @@ unix {
     QT += dbus
 }
 
-!isEmpty(DTK_NO_MULTIMEDIA){
+#!isEmpty(DTK_NO_MULTIMEDIA){
     DEFINES += DTK_NO_MULTIMEDIA
     QT -= multimedia multimediawidgets
-} else {
-    HEADERS  += \
-        cameraform.h
-    SOURCES += \
-        cameraform.cpp
-    FORMS += \
-        cameraform.ui
-}
+#} else {
+#    HEADERS  += \
+#        cameraform.h
+#    SOURCES += \
+#        cameraform.cpp
+#    FORMS += \
+#        cameraform.ui
+#}
 
 !isEmpty(DTK_STATIC_LIB){
     DEFINES += DTK_STATIC_LIB
@@ -82,9 +82,9 @@ else:unix: LIBS += -L$$OUT_PWD/../../../src -ldtkwidget
 
 INCLUDEPATH += $$PWD/../../../src
 INCLUDEPATH += $$PWD/../../../src/widgets
-INCLUDEPATH += $$PWD/../../../src/util
+#INCLUDEPATH += $$PWD/../../../src/util
 DEPENDPATH += $$PWD/../../../src
 
-CONFIG(debug, debug|release) {
-    unix:QMAKE_RPATHDIR += $$OUT_PWD/../../../src
-}
+#CONFIG(debug, debug|release) {
+#    unix:QMAKE_RPATHDIR += $$OUT_PWD/../../../src
+#}

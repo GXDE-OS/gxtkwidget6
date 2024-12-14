@@ -18,14 +18,15 @@
 #include "dvideowidget.h"
 #include <DObjectPrivate>
 
-#include <QAbstractVideoSurface>
-#include <QVideoSurfaceFormat>
+//#include <QAbstractVideoSurface>
+//#include <QVideoSurfaceFormat>
+#include <QVideoSink>
 #include <QCamera>
 #include <QMediaPlayer>
-#include <QMediaPlaylist>
 #include <QPainter>
 #include <QPainterPath>
 #include <QPointer>
+
 
 DWIDGET_BEGIN_NAMESPACE
 
@@ -34,7 +35,7 @@ DWIDGET_BEGIN_NAMESPACE
  * \~chinese \brief DVideoWidget使用的封装视频帧的代理类
  *
  */
-class VideoFormatProxy : public QAbstractVideoSurface
+class VideoFormatProxy : public QVideoSink
 {
     Q_OBJECT
 

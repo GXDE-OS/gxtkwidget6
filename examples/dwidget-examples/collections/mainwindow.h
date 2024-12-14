@@ -22,7 +22,8 @@
 #include <QLabel>
 #include <QTabWidget>
 #include <QVBoxLayout>
-#include <qtypetraits.h>
+//#include <qtypetraits.h>
+#include <QTypeInfo>
 
 #include "widgets/dmainwindow.h"
 

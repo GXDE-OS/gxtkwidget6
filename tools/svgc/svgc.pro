@@ -1,4 +1,4 @@
-QT += gui svg
+QT += gui svg core widgets
 QT += dtkcore
 
 TARGET = dtk-svgc
@@ -34,9 +34,10 @@ target.path = $${BIN_INSTALL_DIR}
 
 INSTALLS += target
 
-win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../../src/release/ -ldtkwidget
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../../src/debug/ -ldtkwidget
-else:unix: LIBS += -L$$OUT_PWD/../../src/ -ldtkwidget
+CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../../src/release/ -ldtkwidget
+else:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../../src/debug/ -ldtkwidget
+
+#else:unix: LIBS += -L$$OUT_PWD/../../src/ -ldtkwidget
 
 INCLUDEPATH += $$PWD/../../src
 INCLUDEPATH += $$PWD/../../src/util

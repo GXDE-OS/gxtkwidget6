@@ -7,6 +7,7 @@ win32* {
 }
 
 linux{
+    PKGCONFIG += gsettings-qt
     HEADERS += \
         $$PWD/dmpriscontrol.h \
         $$PWD/dpasswdeditanimated.h
@@ -31,16 +32,16 @@ mac{
     LIBS += -framework Foundation -framework Cocoa
 }
 
-isEmpty(DTK_NO_MULTIMEDIA){
-    HEADERS += \
-        $$PWD/dvideowidget.h
-
-    SOURCES += \
-        $$PWD/dvideowidget.cpp
-
-    includes.files += \
-        $$PWD/DVideoWidget
-}
+#isEmpty(DTK_NO_MULTIMEDIA){
+#    HEADERS += \
+#        $$PWD/dvideowidget.h
+#
+#    SOURCES += \
+#        $$PWD/dvideowidget.cpp
+#
+#    includes.files += \
+#        $$PWD/DVideoWidget
+#}
 
 HEADERS += $$PWD/dslider.h\
     $$PWD/dapplicationhelper.h \

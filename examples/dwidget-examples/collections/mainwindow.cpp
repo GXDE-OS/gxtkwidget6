@@ -20,7 +20,8 @@
 #include <QMessageBox>
 #include <QMenu>
 #include <QFontDatabase>
-#include <QTextCodec>
+//#include <QTextCodec>
+#include <QStringConverter>
 #include <QDebug>
 #include <QTemporaryFile>
 
@@ -66,7 +67,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     QVBoxLayout *mainLayout = new QVBoxLayout();
 
-    mainLayout->setMargin(5);
+    mainLayout->setContentsMargins(5, 5, 5, 5);
     mainLayout->addWidget(m_mainTab);
 
     QHBoxLayout *styleLayout = new QHBoxLayout();
@@ -216,9 +217,9 @@ void MainWindow::menuItemInvoked(QAction *action)
         });
 
         QStringList codings;
-        for (auto coding : QTextCodec::availableCodecs()) {
+        /*for (auto coding : QTextCodec::availableCodecs()) {
             codings << coding;
-        }
+        }*/
 
         auto encoding = settings->option("advance.encoding.encoding");
         encoding->setData("items", codings);
@@ -256,9 +257,9 @@ void MainWindow::initTabWidget()
 
     WidgetsTab *widgetsTab = new WidgetsTab(this);
 
-#ifndef DTK_NO_MULTIMEDIA
+/*#ifndef DTK_NO_MULTIMEDIA
     CameraForm *cameraform = new CameraForm(this);
-#endif
+#endif*/
 
     GraphicsEffectTab *effectTab = new GraphicsEffectTab(this);
 
