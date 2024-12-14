@@ -1,4 +1,4 @@
-dtkwidget2 (15.14.1-2.2.6.2) UNRELEASED; urgency=medium
+gxtkwidget6 (6.0.0) UNRELEASED; urgency=medium
 
   * 修复大部分 dtk2 应用退出时异常崩溃的问题
   * 修复在 dtk2 中开启 dtk5 应用时样式错误的问题
@@ -9,13 +9,13 @@ dtkwidget2 (15.14.1-2.2.6.2) UNRELEASED; urgency=medium
 
  -- gfdgd_xi <3025613752@qq.com>  Sat, 30 Nov 2024 12:20:23 +0800
 
-dtkwidget2 (15.11~2.2.1+rebuild-1) unstable; urgency=medium
+gxtkwidget6 (15.11~2.2.1+rebuild-1) unstable; urgency=medium
 
   * update
 
  -- Deepin Packages Builder <packages@deepin.com>  Wed, 27 Jan 2021 16:26:31 +0800
 
-dtkwidget2 (2.0.7.2) unstable; urgency=medium
+gxtkwidget6 (2.0.7.2) unstable; urgency=medium
 
   * Release 2.0.7.2
 

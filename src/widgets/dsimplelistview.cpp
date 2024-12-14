@@ -1604,13 +1604,13 @@ QList<int> DSimpleListView::getRenderWidths()
         if (d->columnWidths.contains(-1)) {
             for (int i = 0; i < d->columnWidths.count(); i++) {
                 if (d->columnWidths[i] != -1) {
-                    if (columnVisibles[i]) {
+                    if (i < columnVisibles.count() && columnVisibles[i]) {
                         renderWidths << d->columnWidths[i];
                     } else {
                         renderWidths << 0;
                     }
                 } else {
-                    if (columnVisibles[i]) {
+                    if (i < columnVisibles.count() && columnVisibles[i]) {
                         int totalWidthOfOtherColumns = 0;
 
                         for (int j = 0; j < d->columnWidths.count(); j++) {
@@ -1627,7 +1627,7 @@ QList<int> DSimpleListView::getRenderWidths()
             }
         } else {
             for (int i = 0; i < d->columnWidths.count(); i++) {
-                if (columnVisibles[i]) {
+                if (i < columnVisibles.count() && columnVisibles[i]) {
                     renderWidths << d->columnWidths[i];
                 } else {
                     renderWidths << 0;

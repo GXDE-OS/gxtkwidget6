@@ -1,4 +1,4 @@
-Source: dtkwidget2
+Source: gxtkwidget6
 Section: libdevel
 Priority: optional
 Maintainer: Deepin Packages Builder <packages@deepin.com>
@@ -27,32 +27,32 @@ Build-Depends: debhelper (>= 9),
  libxi-dev
 Standards-Version: 3.9.8
 
-Package: libdtkwidget2
+Package: libgxtkwidget6
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libdframeworkdbus2
-Recommends: gxde-qt5integration
+Recommends: gxde-qt6integration
 Multi-Arch: same
 Description: Deepin graphical user interface library
  DtkWidget is Deepin graphical user interface for deepin desktop development.
  .
  This package contains the shared libraries.
 
-Package: libdtkwidget-bin
+Package: libgxtkwidget-bin
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends},
- libdtkwidget2( =${binary:Version}),
- qtmultimedia5-dev, libqt5x11extras5-dev, libdtkcore2-dev, libqt5svg5-dev
+ libgxtkwidget6( =${binary:Version}),
+ qt6-multimedia-dev, libdtk6core-dev, libqt6svg6
 Description: Deepin graphical user interface library utilities
  DtkWidget is Deepin graphical user interface for deepin desktop development.
  .
  This package contains the utilities which are
  needed for developing Deepin applications.
 
-Package: libdtkwidget2-dev
+Package: libgxtkwidget6-dev
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends},
- libdtkwidget2( =${binary:Version}),
- qtmultimedia5-dev, libqt5x11extras5-dev, libdtkcore2-dev, libqt5svg5-dev
+ libgxtkwidget6( =${binary:Version}),
+ qt6-multimedia-dev, libdtkcore2-dev, libqt6svg6
 Conflicts: libdtkwidget-dev
 Replaces: libdtkwidget-dev
 Description: Deepin graphical user interface library

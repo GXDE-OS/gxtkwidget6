@@ -22,7 +22,7 @@ isEmpty(PREFIX){
     PREFIX = /usr
 }
 isEmpty(BIN_INSTALL_DIR) {
-    BIN_INSTALL_DIR=$${PREFIX}/lib/dtk2
+    BIN_INSTALL_DIR=$${PREFIX}/lib/gxtk6
 }
 !isEmpty(DTK_STATIC_LIB){
     DEFINES += DTK_STATIC_LIB
