@@ -82,9 +82,9 @@ else:unix: LIBS += -L$$OUT_PWD/../../../src -ldtkwidget
 
 INCLUDEPATH += $$PWD/../../../src
 INCLUDEPATH += $$PWD/../../../src/widgets
-#INCLUDEPATH += $$PWD/../../../src/util
+INCLUDEPATH += $$PWD/../../../src/util
 DEPENDPATH += $$PWD/../../../src
 
-#CONFIG(debug, debug|release) {
-#    unix:QMAKE_RPATHDIR += $$OUT_PWD/../../../src
-#}
+CONFIG(debug, debug|release) {
+    unix:QMAKE_RPATHDIR += $$OUT_PWD/../../../src
+}

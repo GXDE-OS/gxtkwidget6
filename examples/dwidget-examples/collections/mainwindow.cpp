@@ -20,8 +20,11 @@
 #include <QMessageBox>
 #include <QMenu>
 #include <QFontDatabase>
-//#include <QTextCodec>
+#if QT_VERSION < QT_VERSION_CHECK(6,0,0)
+#include <QTextCodec>
+#else
 #include <QStringConverter>
+#endif
 #include <QDebug>
 #include <QTemporaryFile>
 
@@ -217,9 +220,14 @@ void MainWindow::menuItemInvoked(QAction *action)
         });
 
         QStringList codings;
-        /*for (auto coding : QTextCodec::availableCodecs()) {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+        for (auto coding : QTextCodec::availableCodecs()) {
+#else
+        for (auto i = 0; i < QStringConverter::LastEncoding; ++i) {
+            QString coding = QStringConverter::nameForEncoding(static_cast<QStringConverter::Encoding>(i));
+#endif
             codings << coding;
-        }*/
+        }
 
         auto encoding = settings->option("advance.encoding.encoding");
         encoding->setData("items", codings);

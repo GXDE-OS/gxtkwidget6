@@ -22,7 +22,11 @@
 
 #ifdef Q_OS_LINUX
 #include <X11/extensions/shape.h>
-//#include <QX11Info>
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+#include <QX11Info>
+#else
+#include <QtGui/private/qtx11extras_p.h>
+#endif
 #endif
 #include <QApplication>
 #include <QScreen>
@@ -1168,7 +1172,7 @@ void DArrowRectanglePrivate::resizeWithContent()
 
     q->setFixedSize(q->getFixedSize());
 
-/*#ifdef Q_OS_LINUX
+#ifdef Q_OS_LINUX
     if (qgetenv("XDG_SESSION_TYPE") != "wayland" || qgetenv("DTK2_XWAYLAND") != "") {
         const qreal ratio = qApp->devicePixelRatio();
         if (!m_handle && !floatMode) {
@@ -1183,7 +1187,7 @@ void DArrowRectanglePrivate::resizeWithContent()
                                     &m_contentXRect, 1, ShapeSet, YXBanded);
         }
     }
-#endif*/
+#endif
 }
 
 void DArrowRectanglePrivate::paintEvent(QPaintEvent *e)

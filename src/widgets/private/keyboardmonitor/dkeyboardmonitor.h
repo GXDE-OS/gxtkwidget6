@@ -27,9 +27,11 @@
 #define KEYBOARDMONITOR_H
 
 #include <QThread>
-//#include <QX11Info>
-// Qt6 QX11Info 已废弃
-// 参考 https://doc.qt.io/qt-6/extras-changes-qt6.html
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+#include <QX11Info>
+#else
+#include <QtGui/private/qtx11extras_p.h>
+#endif
 #include <qnativeinterface.h>
 #include "dtkwidget_global.h"
 #include <QGuiApplication>

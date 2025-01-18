@@ -1,8 +1,8 @@
 
-#linux {
-#    include($$PWD/x11/x11.pri)
-#}
+linux {
+    include($$PWD/x11/x11.pri)
+}
 
-#win32* {
+win32* {
     include($$PWD/windows/windows.pri)
-#}
+}

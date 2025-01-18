@@ -818,7 +818,7 @@ void DBlurEffectWidget::paintEvent(QPaintEvent *event)
 
             pa_image.setCompositionMode(QPainter::CompositionMode_Source);
 
-            /*for (const QRect &rect : event->region().rects()) {
+            for (const QRect &rect : event->region()) {
                 if (device_pixel_ratio > 1) {
                     const QRect &tmp_rect = this->rect().translated(point_offset);
                     const QImage &area = window()->backingStore()->handle()->toImage().copy(tmp_rect * device_pixel_ratio);
@@ -828,7 +828,7 @@ void DBlurEffectWidget::paintEvent(QPaintEvent *event)
                     pa_image.drawImage(rect.topLeft() + QPoint(radius, radius),
                                        window()->backingStore()->handle()->toImage().copy(rect.translated(point_offset)));
                 }
-            }*/
+            }
 
             pa_image.end();
         }

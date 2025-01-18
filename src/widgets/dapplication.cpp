@@ -134,7 +134,11 @@ static bool tryAcquireSystemSemaphore(QSystemSemaphore *ss, qint64 timeout = 10)
     _tmp_ss.acquire();
 
     QElapsedTimer t;
-    /*QFuture<bool> request = QtConcurrent::run(ss, &QSystemSemaphore::acquire);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+    QFuture<bool> request = QtConcurrent::run(ss, &QSystemSemaphore::acquire);
+#else
+    QFuture<bool> request = QtConcurrent::run(&QSystemSemaphore::acquire,ss);
+#endif
 
     t.start();
 
@@ -150,7 +154,6 @@ static bool tryAcquireSystemSemaphore(QSystemSemaphore *ss, qint64 timeout = 10)
         }
     }
 
-    return false;*/
     return false;
 }
 
@@ -399,7 +402,8 @@ DApplication::DApplication(int &argc, char **argv) :
         setAttribute(Qt::AA_ForceRasterWidgets);
     }
 
-/*#ifdef Q_OS_LINUX
+#ifdef Q_OS_LINUX
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     // set qpixmap cache limit
     if (QGSettings::isSchemaInstalled("com.deepin.dde.dapplication"))
     {
@@ -427,7 +431,8 @@ DApplication::DApplication(int &argc, char **argv) :
             // This workaround hopefully can fix most of this situations.
             QTapAndHoldGesture::setTimeout(gsettings.get("longpress-duration").toInt() - 100);
     }
-#endif*/
+#endif
+#endif
 }
 
 
