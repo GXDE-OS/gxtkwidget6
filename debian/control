@@ -19,12 +19,14 @@ Build-Depends: debhelper (>= 9),
  libfreetype6-dev, 
  libglib2.0-dev, 
  libxrender-dev,
- libdtkcore-dev, 
+ libdtk6core-dev, 
  libgsettings-qt-dev, 
  librsvg2-dev, 
  libdframeworkdbus-dev (>> 1.0.0),
  libqt5svg5-dev, 
- libxi-dev
+ libxi-dev,
+ qt6-svg-dev,
+ qt6-base-dev
 Standards-Version: 3.9.8
 
 Package: libgxtkwidget6
@@ -52,7 +54,7 @@ Package: libgxtkwidget6-dev
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends},
  libgxtkwidget6( =${binary:Version}),
- qt6-multimedia-dev, libdtkcore2-dev, libqt6svg6
+ qt6-multimedia-dev, libdtk6core-dev, libqt6svg6
 Conflicts: libdtkwidget-dev
 Replaces: libdtkwidget-dev
 Description: Deepin graphical user interface library

@@ -1,10 +1,9 @@
 #!/usr/bin/make -f
 DPKG_EXPORT_BUILDFLAGS = 1
 include /usr/share/dpkg/default.mk
-export QT_SELECT = qt6
+#export QT_SELECT=qt6  # 取消注释以确保使用 Qt6
 
 DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
-
 DEB_BUILD_ARCH ?= $(shell dpkg-architecture -qDEB_BUILD_ARCH)
 
 ifneq (,$(wildcard .git/config))
@@ -19,11 +18,15 @@ else
 		CONFIG_VERSION = $(_PACK_VER).$(_BUILD_VER)
 	endif
 endif
+
 %:
 	dh $@ --parallel
 
+# 覆盖配置步骤，调用 qmake6
 override_dh_auto_configure:
-	dh_auto_configure -- LIB_INSTALL_DIR=/usr/lib/$(DEB_HOST_MULTIARCH)
+	qmake6 PREFIX=/usr LIB_INSTALL_DIR=/usr/lib/$(DEB_HOST_MULTIARCH) .  # 替换 your_project.pro 为实际项目文件
+	#dh_auto_configure --  # 保留原有参数（若需要）
+
 override_dh_makeshlibs:
 	dh_makeshlibs -V
 
@@ -36,4 +39,3 @@ ifeq ($(DEB_BUILD_ARCH), mips64el)
 override_dh_makeshlibs:
 	dh_makeshlibs -V -- -c0
 endif
-
