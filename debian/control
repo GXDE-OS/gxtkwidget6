@@ -26,7 +26,8 @@ Build-Depends: debhelper (>= 9),
  libqt5svg5-dev, 
  libxi-dev,
  qt6-svg-dev,
- qt6-base-dev
+ qt6-base-dev,
+ qt6-l10n-tools
 Standards-Version: 3.9.8
 
 Package: libgxtkwidget6
