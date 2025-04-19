@@ -1,4 +1,4 @@
-TARGET = dtkwidget
+TARGET = gxtkwidget
 TEMPLATE = lib
 QT += dtkcore
 include($$PWD/../dtk_build.prf)

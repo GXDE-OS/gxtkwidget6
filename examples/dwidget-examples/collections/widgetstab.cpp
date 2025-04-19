@@ -19,7 +19,7 @@
 #include "darrowrectangle.h"
 #ifdef Q_OS_LINUX
 #include "dmpriscontrol.h"
-#include "../dregionmonitor.h"
+#include "dregionmonitor.h"
 using Dtk::Widget::DRegionMonitor;
 #endif
 

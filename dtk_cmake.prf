@@ -10,12 +10,12 @@ defineReplace(capitalizingString) {
 }
 
 !win*: {
-MODULE_DEPENDS=$$find(QT, dtk*)
+MODULE_DEPENDS=$$find(QT, gxtk*)
 CMAKE_MODULE_DEPENDS=$$replace(MODULE_DEPENDS,"dtk","")
 
 MODULE_NAME=$$replace(TARGET,"dtk","")
 MODULE_NAME=$$capitalizingString($$MODULE_NAME)
-CMAKE_MODULE=Dtk$$MODULE_NAME
+CMAKE_MODULE=Gxtk$$MODULE_NAME
 WORK_DIR=$$_PRO_FILE_PWD_
 
 message("config cmake module: $$CMAKE_MODULE")

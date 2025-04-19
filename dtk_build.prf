@@ -1,5 +1,5 @@
 isEmpty(TARGET): error(set TARGET first)
-!contains(TARGET, ^dtk[a-z0-9]+$): error(The format of the value of TARGET is incorrect. eg: dtk[a-z0-9]+)
+!contains(TARGET, ^gxtk[a-z0-9]+$): error(The format of the value of TARGET is incorrect. eg: dtk[a-z0-9]+)
 !isEqual(TARGET, dtkcore):!contains(QT, dtkcore): error(QT += dtkcore first)
 
 defineTest(checkDtkVersion) {

@@ -237,8 +237,8 @@ bool DApplicationPrivate::loadDtkTranslator(QList<QLocale> localeFallback)
     q->installTranslator(qtbaseTranslator);
 
     QList<DPathBuf> translateDirs;
-    auto dtkwidgetDir = "dtkwidget";
-    auto dtkwidgetName = "dtkwidget2";
+    auto dtkwidgetDir = "gxtkwidget";
+    auto dtkwidgetName = "gxtkwidget2";
 
     //("/home/user/.local/share", "/usr/local/share", "/usr/share")
     auto dataDirs = DStandardPaths::standardLocations(QStandardPaths::GenericDataLocation);
