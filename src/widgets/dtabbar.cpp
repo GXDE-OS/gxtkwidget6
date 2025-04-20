@@ -379,7 +379,7 @@ void DTabBarPrivate::updateMoveingTabPosition(const QPoint &mouse)
 {
     QTabBarPrivate *d = reinterpret_cast<QTabBarPrivate *>(qGetPtrHelper(d_ptr));
 
-    bool vertical = verticalTabs(d->shape);
+    bool vertical = Dtk::Widget::verticalTabs(d->shape);
     int dragDistance;
     if (vertical) {
         dragDistance = (mouse.y() - d->dragStartPosition.y());
@@ -475,7 +475,7 @@ void DTabBarPrivate::slide(int from, int to)
             || !d->validIndex(from)
             || !d->validIndex(to))
         return;
-    bool vertical = verticalTabs(d->shape);
+    bool vertical = Dtk::Widget::verticalTabs(d->shape);
     int preLocation = vertical ? tabRect(from).y() : tabRect(from).x();
     setUpdatesEnabled(false);
     moveTab(from, to);
@@ -520,7 +520,7 @@ void DTabBarPrivate::layoutTab(int index)
     QTabBarPrivate *d = reinterpret_cast<QTabBarPrivate *>(qGetPtrHelper(d_ptr));
 
     QTabBarPrivate::Tab &tab = *d->tabList[index];
-    bool vertical = verticalTabs(d->shape);
+    bool vertical = Dtk::Widget::verticalTabs(d->shape);
     if (!(tab.leftWidget || tab.rightWidget))
         return;
 
@@ -598,7 +598,7 @@ void DTabBarPrivate::makeVisible(int index)
 
     const QRect tabRect = d->tabList.at(index)->rect;
     const int oldScrollOffset = d->scrollOffset;
-    const bool horiz = !verticalTabs(d->shape);
+    const bool horiz = !Dtk::Widget::verticalTabs(d->shape);
     /*const int extra_width = 2 * qMax(style()->pixelMetric(QStyle::PM_TabBarScrollButtonWidth, 0, this),
                                      QApplication::globalStrut().width());*/
     const int extra_width = 2 * style()->pixelMetric(QStyle::PM_TabBarScrollButtonWidth, 0, this);
@@ -627,7 +627,7 @@ void DTabBarPrivate::autoScrollTabs(const QPoint &mouse)
     }
 
     QTabBarPrivate *d = reinterpret_cast<QTabBarPrivate *>(qGetPtrHelper(d_ptr));
-    bool vertical = verticalTabs(d->shape);
+    bool vertical = Dtk::Widget::verticalTabs(d->shape);
     const QSize &size_hint = this->sizeHint();
     int scroll_distance = qMin(50, vertical ? rect.height() / 3 : rect.width() / 3);
 
@@ -721,7 +721,7 @@ void DTabBarPrivate::ensureScrollTabsAnimation()
         d->scrollOffset = v;
 
         if (d->dragInProgress && d->validIndex(d->pressedIndex)) {
-            if (verticalTabs(d->shape)) {
+            if (Dtk::Widget::verticalTabs(d->shape)) {
                 d->dragStartPosition.setY(dragStartPosition.y() + scrollOffset - v);
             } else {
                 d->dragStartPosition.setX(dragStartPosition.x() + scrollOffset - v);
@@ -819,7 +819,7 @@ int DTabBarPrivate::tabInsertIndexFromMouse(QPoint pos)
     int current = tabAt(pos);
 
     QTabBarPrivate *d = reinterpret_cast<QTabBarPrivate *>(qGetPtrHelper(d_ptr));
-    bool vertical = verticalTabs(this->shape());
+    bool vertical = Dtk::Widget::verticalTabs(this->shape());
 
     if (!d->validIndex(current)){
         if (vertical)
@@ -954,7 +954,7 @@ void DTabBarPrivate::paintEvent(QPaintEvent *e)
     int selected = -1;
 //    int cut = -1;
 //    bool rtl = optTabBase.direction == Qt::RightToLeft;
-    bool vertical = verticalTabs(d->shape);
+    bool vertical = Dtk::Widget::verticalTabs(d->shape);
 //    QStyleOptionTab cutTab;
     selected = d->currentIndex;
     if (d->dragInProgress)
@@ -1059,7 +1059,7 @@ void DTabBarPrivate::mouseMoveEvent(QMouseEvent *event)
     int offset_y = qAbs(event->y() - d->dragStartPosition.y());
     bool valid_pressed_index = d->validIndex(d->pressedIndex);
 
-    if (verticalTabs(d->shape)) {
+    if (Dtk::Widget::verticalTabs(d->shape)) {
         std::swap(offset_x, offset_y);
     }
 
@@ -1366,8 +1366,8 @@ void DTabBar::setShape(QTabBar::Shape shape)
 {
     D_D(DTabBar);
 
-    bool old_vertical = verticalTabs(d_func()->shape());
-    bool new_vertical = verticalTabs(shape);
+    bool old_vertical = Dtk::Widget::verticalTabs(d_func()->shape());
+    bool new_vertical = Dtk::Widget::verticalTabs(shape);
 
     d->setShape(shape);
 
@@ -2042,7 +2042,7 @@ QSize DTabBar::tabSizeHint(int index) const
     QSize size = d->QTabBar::tabSizeHint(index);
 
     QTabBarPrivate *dd = reinterpret_cast<QTabBarPrivate *>(qGetPtrHelper(d->d_ptr));
-    bool is_vertical = verticalTabs(dd->shape);
+    bool is_vertical = Dtk::Widget::verticalTabs(dd->shape);
 
     if (is_vertical) {
         size.setWidth(qMax(size.width(), d->width()));
