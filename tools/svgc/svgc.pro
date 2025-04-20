@@ -34,10 +34,10 @@ target.path = $${BIN_INSTALL_DIR}
 
 INSTALLS += target
 
-CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../../src/release/ -ldtkwidget
-else:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../../src/debug/ -ldtkwidget
+CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../../src/release/ -lgxtkwidget
+else:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../../src/debug/ -lgxtkwidget
 
-#else:unix: LIBS += -L$$OUT_PWD/../../src/ -ldtkwidget
+#else:unix: LIBS += -L$$OUT_PWD/../../src/ -lgxtkwidget
 
 INCLUDEPATH += $$PWD/../../src
 INCLUDEPATH += $$PWD/../../src/util

@@ -76,9 +76,9 @@ win32* {
     CONFIG += no_lflags_merge
 }
 
-win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../../../src/release -ldtkwidget
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../../../src/debug -ldtkwidgetd
-else:unix: LIBS += -L$$OUT_PWD/../../../src -ldtkwidget
+win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../../../src/release -lgxtkwidget
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../../../src/debug -lgxtkwidgetd
+else:unix: LIBS += -L$$OUT_PWD/../../../src -lgxtkwidget
 
 INCLUDEPATH += $$PWD/../../../src
 INCLUDEPATH += $$PWD/../../../src/widgets
